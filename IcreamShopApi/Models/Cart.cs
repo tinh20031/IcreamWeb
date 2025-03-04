@@ -1,8 +1,13 @@
-﻿namespace IcreamShopApi.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace IcreamShopApi.Models
 {
 	public class Cart
 	{
+		[Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int CartId { get; set; }
+		[Required]
 		public int UserId { get; set; }
 		public int IceCreamId { get; set; }
 		public int Quantity { get; set; }

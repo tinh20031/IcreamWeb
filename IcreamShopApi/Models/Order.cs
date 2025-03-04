@@ -1,7 +1,11 @@
-﻿namespace IcreamShopApi.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace IcreamShopApi.Models
 {
 	public class Order
 	{
+		[Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int OrderId { get; set; }
 		public int UserId { get; set; }
 		public decimal TotalPrice { get; set; }
