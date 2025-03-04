@@ -1,7 +1,11 @@
-﻿namespace IcreamShopApi.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace IcreamShopApi.Models
 {
 	public class Review
 	{
+		[Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int ReviewId { get; set; }
 		public int UserId { get; set; }
 		public int IceCreamId { get; set; }
