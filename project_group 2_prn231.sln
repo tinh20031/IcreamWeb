@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcreamShopApi", "IcreamShopApi\IcreamShopApi.csproj", "{F35BAAB8-9178-450C-B1ED-5B222DC61392}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcreamShopCilent", "IcreamShopCilent\IcreamShopCilent.csproj", "{75FB7683-4584-4AC0-9C71-3D35406F591D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F35BAAB8-9178-450C-B1ED-5B222DC61392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35BAAB8-9178-450C-B1ED-5B222DC61392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35BAAB8-9178-450C-B1ED-5B222DC61392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35BAAB8-9178-450C-B1ED-5B222DC61392}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75FB7683-4584-4AC0-9C71-3D35406F591D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75FB7683-4584-4AC0-9C71-3D35406F591D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75FB7683-4584-4AC0-9C71-3D35406F591D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75FB7683-4584-4AC0-9C71-3D35406F591D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD66E262-F93E-489E-9421-AA1E053404E7}
+	EndGlobalSection
+EndGlobal
