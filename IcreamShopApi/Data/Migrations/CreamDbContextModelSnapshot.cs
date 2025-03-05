@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IcreamShopApi.Data.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CreamDbContext))]
+    partial class CreamDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,35 @@ namespace IcreamShopApi.Data.Migrations
                     b.ToTable("Carts");
                 });
 
+            modelBuilder.Entity("IcreamShopApi.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("image")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            Name = "Chocolate",
+                            image = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Chocolate.jpg/1155px-Chocolate.jpg"
+                        });
+                });
+
             modelBuilder.Entity("IcreamShopApi.Models.IceCream", b =>
                 {
                     b.Property<int>("IceCreamId")
@@ -58,6 +87,9 @@ namespace IcreamShopApi.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IceCreamId"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -82,7 +114,22 @@ namespace IcreamShopApi.Data.Migrations
 
                     b.HasKey("IceCreamId");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("IceCreams");
+
+                    b.HasData(
+                        new
+                        {
+                            IceCreamId = 1,
+                            CategoryId = 1,
+                            CreatedAt = new DateTime(2025, 3, 5, 15, 14, 43, 413, DateTimeKind.Local).AddTicks(9273),
+                            Description = "kem xin",
+                            ImageUrl = "choco.jpg",
+                            Name = "Chocolate Ice Cream",
+                            Price = 10.99m,
+                            Stock = 100
+                        });
                 });
 
             modelBuilder.Entity("IcreamShopApi.Models.Order", b =>
@@ -233,12 +280,23 @@ namespace IcreamShopApi.Data.Migrations
                     b.HasOne("IcreamShopApi.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("IceCream");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("IcreamShopApi.Models.IceCream", b =>
+                {
+                    b.HasOne("IcreamShopApi.Models.Category", "Category")
+                        .WithMany("IceCreams")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("IcreamShopApi.Models.Order", b =>
@@ -282,12 +340,17 @@ namespace IcreamShopApi.Data.Migrations
                     b.HasOne("IcreamShopApi.Models.User", "User")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("IceCream");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("IcreamShopApi.Models.Category", b =>
+                {
+                    b.Navigation("IceCreams");
                 });
 
             modelBuilder.Entity("IcreamShopApi.Models.IceCream", b =>

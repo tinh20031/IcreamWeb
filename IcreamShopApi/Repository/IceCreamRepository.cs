@@ -7,9 +7,9 @@ namespace IcreamShopApi.Repository
 	public class IceCreamRepository
 	{
 
-		private readonly AppDbContext _context;
+		private readonly CreamDbContext _context;
 
-		public IceCreamRepository(AppDbContext context)
+		public IceCreamRepository(CreamDbContext context)
 		{
 			_context = context;
 		}
@@ -31,23 +31,33 @@ namespace IcreamShopApi.Repository
 
 		}
 
-		public async Task DeleteIceCream(int Id)
+		public async Task<bool> DeleteIceCream(int Id)
 		{
 			var icecream = await _context.IceCreams.FindAsync(Id);
 			if (icecream != null)
 			{
 				_context.IceCreams.Remove(icecream);
 				await _context.SaveChangesAsync();
+				
+			}
+			return true;
 
+		}
+
+		public async Task EditIceCream(IceCream iceCream)
+		{
+			var existingIceCream = await _context.IceCreams.FindAsync(iceCream.IceCreamId);
+
+			if (existingIceCream == null)
+			{
+				throw new Exception("Không tìm thấy Ice Cream!");
 			}
 
+			_context.Entry(existingIceCream).CurrentValues.SetValues(iceCream);
+			await _context.SaveChangesAsync();
 		}
 
-		public async Task EditIceCream (int id)
-		{
-			var editIceCream = await _context.IceCreams.FindAsync($"{id}");
-		}
-		
+
 	}
 }
 

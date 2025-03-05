@@ -28,3 +28,4 @@ D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopCilent\obj\Debug\n
 D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopCilent\obj\Debug\net8.0\IcreamShopCilent.pdb
 D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopCilent\obj\Debug\net8.0\IcreamShopCilent.genruntimeconfig.cache
 D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopCilent\obj\Debug\net8.0\ref\IcreamShopCilent.dll
+D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopCilent\obj\Debug\net8.0\IcreamShopCilent.sourcelink.json
