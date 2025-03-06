@@ -1,0 +1,54 @@
+﻿using IcreamShopApi.Models;
+using IcreamShopApi.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace IcreamShopApi.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CartApiController : ControllerBase
+    {
+        private readonly CartService _cartService;
+
+        public CartApiController(CartService cartService)
+        {
+            _cartService = cartService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Cart>>> GetAllCarts()
+        {
+            var carts = await _cartService.GetAllCarts();
+            return Ok(carts);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cart>> GetCartById(int id)
+        {
+            var getCartId = await _cartService.GetCartById(id);
+            return Ok(getCartId);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Cart>> AddCart([FromBody] Cart cart)
+        {
+            var addCart = await _cartService.AddCart(cart);
+            return Ok(addCart);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Cart>> EditCart(int id, [FromBody] Cart cart)
+        {
+            cart.CartId = id;
+            await _cartService.EditCart(cart);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Cart>> DeleteCart(int id)
+        {
+            await _cartService.DeleteCart(id);
+            return Ok();
+        }
+    }
+}

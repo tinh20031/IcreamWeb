@@ -9,39 +9,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = IcreamShopCilent
 build_property.RootNamespace = IcreamShopCilent
-build_property.ProjectDir = D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopCilent\
+build_property.ProjectDir = F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopCilent\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopCilent
+build_property.MSBuildProjectDirectory = F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopCilent
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/source_code/SC_PRN231/LAB/project_group 2_prn231/IcreamShopCilent/Pages/Error.cshtml]
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source_code/SC_PRN231/LAB/project_group 2_prn231/IcreamShopCilent/Pages/Index.cshtml]
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source_code/SC_PRN231/LAB/project_group 2_prn231/IcreamShopCilent/Pages/Privacy.cshtml]
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source_code/SC_PRN231/LAB/project_group 2_prn231/IcreamShopCilent/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source_code/SC_PRN231/LAB/project_group 2_prn231/IcreamShopCilent/Pages/_ViewImports.cshtml]
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source_code/SC_PRN231/LAB/project_group 2_prn231/IcreamShopCilent/Pages/_ViewStart.cshtml]
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/source_code/SC_PRN231/LAB/project_group 2_prn231/IcreamShopCilent/Pages/Shared/_Layout.cshtml]
+[F:/SPRING2025/PRN231/newproject_PRN/IcreamWeb/IcreamShopCilent/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8epbptiufi

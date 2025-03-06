@@ -7,9 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Components\" />
-    <Folder Include="Services\" />
-    <Folder Include="root\" />
+    <Compile Remove="Components\**" />
+    <Compile Remove="root\**" />
+    <Content Remove="Components\**" />
+    <Content Remove="root\**" />
+    <EmbeddedResource Remove="Components\**" />
+    <EmbeddedResource Remove="root\**" />
+    <None Remove="Components\**" />
+    <None Remove="root\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="8.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.3" />
+    <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IcreamShopApi\IcreamShopApi.csproj" />
   </ItemGroup>
 
 </Project>
