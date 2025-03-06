@@ -1,0 +1,46 @@
+﻿@page
+@model IcreamShopCilent.Pages.Auth.LoginModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+
+    <form method="post">
+        <div>
+            <label for="Email">Email</label>
+            <input type="email" id="Email" name="Email" required/>
+        </div>
+
+        <div>
+            <label for="Password">Password</label>
+            <input type="password" id="Password" name="Password" required/>
+        </div>
+
+        <button type="submit">Login With Email</button>
+        </form>
+    <hr>
+
+    <!-- Facebook login button -->
+    <p>
+        <a class="btn btn-primary" href="/Auth/Login?handler=FacebookLogin">Login with Facebook</a>
+    </p>
+
+    <!-- Google login button -->
+    <p>
+        <a class="btn btn-danger" href="/Auth/Login?handler=GoogleLogin">Login with Google</a>
+    </p>
+        <hr>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/Auth/Register">Register</a>
+    </li>
+
+
+</body>
+

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\IcreamShopApi.csproj": {}
+    "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj": {}
   },
   "projects": {
-    "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\IcreamShopApi.csproj": {
+    "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\IcreamShopApi.csproj",
+        "projectUniqueName": "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj",
         "projectName": "IcreamShopApi",
-        "projectPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\IcreamShopApi.csproj",
-        "packagesPath": "C:\\Users\\tinht\\.nuget\\packages\\",
-        "outputPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\obj\\",
+        "projectPath": "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj",
+        "packagesPath": "C:\\Users\\thanh\\.nuget\\packages\\",
+        "outputPath": "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\tinht\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\thanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,99 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj": {
-                "projectPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.OData": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.4.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj",
-        "projectName": "IcreamShopCilent",
-        "projectPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj",
-        "packagesPath": "C:\\Users\\tinht\\.nuget\\packages\\",
-        "outputPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\tinht\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -137,6 +49,52 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.OData": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -156,7 +114,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
