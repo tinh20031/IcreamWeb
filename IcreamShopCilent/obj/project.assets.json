@@ -4419,24 +4419,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thanh\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\tinht\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
+      "projectUniqueName": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
       "projectName": "IcreamShopCilent",
-      "projectPath": "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
-      "packagesPath": "C:\\Users\\thanh\\.nuget\\packages\\",
-      "outputPath": "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopCilent\\obj\\",
+      "projectPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
+      "packagesPath": "C:\\Users\\tinht\\.nuget\\packages\\",
+      "outputPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\thanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\tinht\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4444,15 +4439,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj": {
-              "projectPath": "F:\\SPRING2025\\PRN231\\newproject_PRN\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj"
+            "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj": {
+              "projectPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj"
             }
           }
         }
@@ -4504,7 +4498,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

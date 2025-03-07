@@ -1,307 +1,157 @@
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\appsettings.Development.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\appsettings.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.exe
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.deps.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.runtimeconfig.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.pdb
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.csproj.AssemblyReference.cache
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.GeneratedMSBuildEditorConfig.editorconfig
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.AssemblyInfoInputs.cache
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.AssemblyInfo.cs
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.csproj.CoreCompileInputs.cache
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.MvcApplicationPartsAssemblyInfo.cs
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.MvcApplicationPartsAssemblyInfo.cache
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\staticwebassets.build.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\staticwebassets.development.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.IcreamShopApi.Microsoft.AspNetCore.StaticWebAssets.props
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.build.IcreamShopApi.props
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.IcreamShopApi.props
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.IcreamShopApi.props
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\staticwebassets.pack.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\scopedcss\bundle\IcreamShopApi.styles.css
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamSh.AF9BC3D2.Up2Date
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\refint\IcreamShopApi.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.pdb
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.genruntimeconfig.cache
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\ref\IcreamShopApi.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Azure.Core.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Azure.Identity.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Humanizer.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Mono.TextTemplating.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.CodeDom.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Composition.AttributedModel.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Composition.Convention.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Composition.Hosting.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Composition.Runtime.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Composition.TypedParts.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Drawing.Common.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Memory.Data.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Runtime.Caching.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Security.Permissions.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\System.Windows.Extensions.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopCilent.deps.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopCilent.runtimeconfig.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopCilent.staticwebassets.runtime.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopCilent.exe
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.staticwebassets.runtime.json
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.AspNetCore.OData.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.Core.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.Edm.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.ModelBuilder.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\Microsoft.Spatial.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopCilent.dll
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\bin\Debug\net8.0\IcreamShopCilent.pdb
-D:\source_code\SC_PRN231\LAB\project_group 2_prn231\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.sourcelink.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\appsettings.Development.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\appsettings.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.staticwebassets.runtime.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.exe
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.deps.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.runtimeconfig.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.pdb
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Azure.Core.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Azure.Identity.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\BCrypt.Net-Next.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Humanizer.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.AspNetCore.OData.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Identity.Client.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.Core.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.Edm.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.ModelBuilder.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Spatial.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Mono.TextTemplating.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Newtonsoft.Json.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.CodeDom.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.AttributedModel.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.Convention.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.Hosting.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.Runtime.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.TypedParts.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Drawing.Common.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Memory.Data.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Runtime.Caching.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Permissions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Windows.Extensions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.csproj.AssemblyReference.cache
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.GeneratedMSBuildEditorConfig.editorconfig
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.AssemblyInfoInputs.cache
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.AssemblyInfo.cs
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.csproj.CoreCompileInputs.cache
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.MvcApplicationPartsAssemblyInfo.cs
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.MvcApplicationPartsAssemblyInfo.cache
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.sourcelink.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets.build.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets.development.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.IcreamShopApi.Microsoft.AspNetCore.StaticWebAssets.props
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.build.IcreamShopApi.props
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.IcreamShopApi.props
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.IcreamShopApi.props
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets.pack.json
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\scopedcss\bundle\IcreamShopApi.styles.css
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamSh.AF9BC3D2.Up2Date
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\refint\IcreamShopApi.dll
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.pdb
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.genruntimeconfig.cache
-F:\SPRING2025\PRN231\newproject_PRN\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\ref\IcreamShopApi.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\appsettings.Development.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\appsettings.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.exe
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.deps.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.runtimeconfig.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\IcreamShopApi.pdb
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Azure.Core.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Azure.Identity.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Humanizer.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.AspNetCore.OData.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.Core.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.Edm.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OData.ModelBuilder.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Spatial.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.CodeDom.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.Convention.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.Hosting.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.Runtime.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Composition.TypedParts.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Drawing.Common.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Memory.Data.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Runtime.Caching.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Security.Permissions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.csproj.AssemblyReference.cache
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.AssemblyInfoInputs.cache
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.AssemblyInfo.cs
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.csproj.CoreCompileInputs.cache
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.MvcApplicationPartsAssemblyInfo.cs
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.MvcApplicationPartsAssemblyInfo.cache
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.sourcelink.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets.build.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets.development.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.IcreamShopApi.Microsoft.AspNetCore.StaticWebAssets.props
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.build.IcreamShopApi.props
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.IcreamShopApi.props
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.IcreamShopApi.props
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\staticwebassets.pack.json
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\scopedcss\bundle\IcreamShopApi.styles.css
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamSh.AF9BC3D2.Up2Date
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\refint\IcreamShopApi.dll
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.pdb
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\IcreamShopApi.genruntimeconfig.cache
+D:\source_code\SC_PRN231\IcreamWeb\IcreamShopApi\obj\Debug\net8.0\ref\IcreamShopApi.dll
