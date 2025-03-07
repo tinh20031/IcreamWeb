@@ -1,6 +1,8 @@
 ﻿using IcreamShopApi.Data;
+using IcreamShopApi.DTOs;
 using IcreamShopApi.Models;
 using IcreamShopApi.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace IcreamShopApi.Services
 {
@@ -14,12 +16,27 @@ namespace IcreamShopApi.Services
             _context = context;
         }
 
-        public async Task<List<Cart>> GetAllCarts()
-        {
-            return await _cartRepository.GetAllCarts();
-        }
+		public async Task<List<CartDTO>> GetAllCarts()
+		{
+			var carts = await _context.Carts
+				.Include(c => c.IceCream) 
+				.Select(c => new CartDTO
+				{
+					CartId = c.CartId,
+					UserId = c.UserId,
+					IceCreamId = c.IceCreamId,
+					Quantity = c.Quantity,
+					CreatedAt = c.CreatedAt,
+					IceCreamName = c.IceCream.Name, 
+					Image = c.IceCream.ImageUrl,
+                    Price = c.IceCream.Price,
+				})
+				.ToListAsync();
 
-        public async Task<Cart> GetCartById(int Id)
+			return carts;
+		}
+
+		public async Task<Cart> GetCartById(int Id)
         {
             return await _cartRepository.GetCartById(Id);
         }

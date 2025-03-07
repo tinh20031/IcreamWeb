@@ -13,11 +13,12 @@ namespace IcreamShopApi.Models
 		public int Quantity { get; set; }
 		public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-		// Khóa ngoại
 		[JsonIgnore]
-		public User User { get; set; }
+		[ForeignKey("UserId")]
+		public User? User { get; set; } 
 		[JsonIgnore]
-		public IceCream IceCream { get; set; }
+		[ForeignKey("IceCreamId")]
+		public IceCream? IceCream { get; set; }
 	}
 
 }

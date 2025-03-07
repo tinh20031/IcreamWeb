@@ -18,9 +18,10 @@ namespace IcreamShopApi.Models
 
 		// Liên kết với Orders và Reviews
 		[JsonIgnore]
-		public ICollection<Order> Orders { get; set; }
+		public ICollection<Order> Orders { get; set; } = new List<Order>();
+
 		[JsonIgnore]
-		public ICollection<Review> Reviews { get; set; }
+		public ICollection<Review> Reviews { get; set; } = new List<Review>();
 	}
 
 }
