@@ -11,12 +11,12 @@ namespace IcreamShopApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthenticationController : ControllerBase
+    public class AuthController : ControllerBase
     {
         private readonly CreamDbContext _context;
         private readonly IConfiguration _configuration;
 
-        public AuthenticationController(CreamDbContext context, IConfiguration configuration)
+        public AuthController(CreamDbContext context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
