@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\IcreamShopApi",
+    "\\IcreamShopApi\\Controllers",
+    "\\IcreamShopApi\\Models",
+    "\\IcreamShopApi\\Repository",
     "\\IcreamShopCilent"
   ],
-  "SelectedNode": "\\IcreamShopCilent\\appsettings.json",
+  "SelectedNode": "\\IcreamShopApi\\Controllers\\IceCreamApiController.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -6,6 +6,7 @@ using System.Text;
 using IcreamShopApi.Models;
 using Microsoft.EntityFrameworkCore;
 using IcreamShopApi.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IcreamShopApi.Controllers
 {
@@ -46,37 +47,66 @@ namespace IcreamShopApi.Controllers
             return Ok("User registered successfully");
         }
 
-        // Đăng nhập và trả về token JWT
-        [HttpPost("login")]
-        public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
-        {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(loginModel.Password, user.PasswordHash))
-                return Unauthorized("Invalid email or password.");
+		// Đăng nhập và trả về token JWT
+		[HttpPost("login")]
+		public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
+		{
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
+			if (user == null || !BCrypt.Net.BCrypt.Verify(loginModel.Password, user.PasswordHash))
+				return Unauthorized("Invalid email or password.");
 
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.Name, user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
-            };
+			var claims = new[]
+			{
+		new Claim(ClaimTypes.Name, user.Email),
+		new Claim(ClaimTypes.Role, user.Role),
+		new Claim("userId", user.UserId.ToString()) // Thêm userId vào claims
+    };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddDays(1),
-                signingCredentials: creds
-            );
+			var token = new JwtSecurityToken(
+				issuer: _configuration["Jwt:Issuer"],
+				audience: _configuration["Jwt:Audience"],
+				claims: claims,
+				expires: DateTime.Now.AddDays(1),
+				signingCredentials: creds
+			);
 
-            return Ok(new
-            {
-                token = new JwtSecurityTokenHandler().WriteToken(token)
-            });
-        }
-    }
+			return Ok(new
+			{
+				token = new JwtSecurityTokenHandler().WriteToken(token),
+				userId = user.UserId, // Thêm userId vào phản hồi
+				email = user.Email,
+				role = user.Role
+			});
+		}
+
+
+		[HttpGet("me")]
+		[Authorize] // Yêu cầu token JWT
+		public async Task<ActionResult<UserDTO>> GetUserInfo()
+		{
+			var email = User.FindFirst(ClaimTypes.Name)?.Value;
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+			if (user == null)
+				return NotFound("User not found");
+
+			return Ok(new UserDTO
+			{
+				UserId = user.UserId,
+				Email = user.Email,
+				Role = user.Role
+			});
+		}
+
+		public class UserDTO
+		{
+			public int UserId { get; set; }
+			public string Email { get; set; }
+			public string Role { get; set; }
+		}
+	}
 
     // Model cho Register và Login
     public class RegisterModel
