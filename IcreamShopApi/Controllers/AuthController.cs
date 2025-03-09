@@ -6,6 +6,8 @@ using System.Text;
 using IcreamShopApi.Models;
 using Microsoft.EntityFrameworkCore;
 using IcreamShopApi.Data;
+using IcreamShopApi.DTOs;
+using IcreamShopApi.Services;
 
 namespace IcreamShopApi.Controllers
 {
@@ -15,11 +17,13 @@ namespace IcreamShopApi.Controllers
     {
         private readonly CreamDbContext _context;
         private readonly IConfiguration _configuration;
+        private readonly IUserService _userService;
 
-        public AuthController(CreamDbContext context, IConfiguration configuration)
+        public AuthController(CreamDbContext context, IConfiguration configuration, IUserService userService)
         {
             _context = context;
             _configuration = configuration;
+            _userService = userService;
         }
 
         // Đăng ký người dùng mới
@@ -47,7 +51,7 @@ namespace IcreamShopApi.Controllers
         }
 
         // Đăng nhập và trả về token JWT
-        [HttpPost("login")]
+        /*[HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
         {
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
@@ -75,7 +79,32 @@ namespace IcreamShopApi.Controllers
             {
                 token = new JwtSecurityTokenHandler().WriteToken(token)
             });
+        }*/
+        [HttpPost("login")]
+        public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(loginModel.Password, user.PasswordHash))
+                return Unauthorized("Invalid email or password.");
+
+            var token = _userService.GenerateJwtToken(user);  // Gọi từ UserService
+
+            var authResponse = new AuthResponseDto
+            {
+                Token = token,
+                Expiration = DateTime.UtcNow.AddDays(1),
+                UserId = user.UserId,
+                FullName = user.FullName,
+                Email = user.Email,
+                Role = user.Role,
+                PhoneNumber = user.PhoneNumber,
+                Address = user.Address
+            };
+
+            return Ok(authResponse);
         }
+
+
     }
 
     // Model cho Register và Login
