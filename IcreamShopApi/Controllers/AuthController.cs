@@ -6,7 +6,8 @@ using System.Text;
 using IcreamShopApi.Models;
 using Microsoft.EntityFrameworkCore;
 using IcreamShopApi.Data;
-using Microsoft.AspNetCore.Authorization;
+using IcreamShopApi.DTOs;
+using IcreamShopApi.Services;
 
 namespace IcreamShopApi.Controllers
 {
@@ -16,11 +17,13 @@ namespace IcreamShopApi.Controllers
     {
         private readonly CreamDbContext _context;
         private readonly IConfiguration _configuration;
+        private readonly IUserService _userService;
 
-        public AuthController(CreamDbContext context, IConfiguration configuration)
+        public AuthController(CreamDbContext context, IConfiguration configuration, IUserService userService)
         {
             _context = context;
             _configuration = configuration;
+            _userService = userService;
         }
 
         // Đăng ký người dùng mới
@@ -48,7 +51,7 @@ namespace IcreamShopApi.Controllers
         }
 
 		// Đăng nhập và trả về token JWT
-		[HttpPost("login")]
+        /*[HttpPost("login")]
 		public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
 		{
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
@@ -58,8 +61,7 @@ namespace IcreamShopApi.Controllers
 			var claims = new[]
 			{
 		new Claim(ClaimTypes.Name, user.Email),
-		new Claim(ClaimTypes.Role, user.Role),
-		new Claim("userId", user.UserId.ToString()) // Thêm userId vào claims
+                new Claim(ClaimTypes.Role, user.Role)
     };
 
 			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -75,37 +77,34 @@ namespace IcreamShopApi.Controllers
 
 			return Ok(new
 			{
-				token = new JwtSecurityTokenHandler().WriteToken(token),
-				userId = user.UserId, // Thêm userId vào phản hồi
-				email = user.Email,
-				role = user.Role
+                token = new JwtSecurityTokenHandler().WriteToken(token)
 			});
-		}
+        }*/
+        [HttpPost("login")]
+        public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(loginModel.Password, user.PasswordHash))
+                return Unauthorized("Invalid email or password.");
 
+            var token = _userService.GenerateJwtToken(user);  // Gọi từ UserService
 
-		[HttpGet("me")]
-		[Authorize] // Yêu cầu token JWT
-		public async Task<ActionResult<UserDTO>> GetUserInfo()
-		{
-			var email = User.FindFirst(ClaimTypes.Name)?.Value;
-			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-			if (user == null)
-				return NotFound("User not found");
-
-			return Ok(new UserDTO
+            var authResponse = new AuthResponseDto
 			{
+                Token = token,
+                Expiration = DateTime.UtcNow.AddDays(1),
 				UserId = user.UserId,
+                FullName = user.FullName,
 				Email = user.Email,
-				Role = user.Role
-			});
+                Role = user.Role,
+                PhoneNumber = user.PhoneNumber,
+                Address = user.Address
+            };
+
+            return Ok(authResponse);
 		}
 
-		public class UserDTO
-		{
-			public int UserId { get; set; }
-			public string Email { get; set; }
-			public string Role { get; set; }
-		}
+
 	}
 
     // Model cho Register và Login
