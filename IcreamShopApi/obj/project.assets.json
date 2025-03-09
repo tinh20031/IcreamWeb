@@ -4816,11 +4816,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\IcreamShopApi.csproj",
+      "projectUniqueName": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj",
       "projectName": "IcreamShopApi",
-      "projectPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\IcreamShopApi.csproj",
+      "projectPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj",
       "packagesPath": "C:\\Users\\tinht\\.nuget\\packages\\",
-      "outputPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\obj\\",
+      "outputPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tinht\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4837,8 +4837,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj": {
-              "projectPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj"
+            "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj": {
+              "projectPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj"
             }
           }
         }

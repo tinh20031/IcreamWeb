@@ -1,66 +1,70 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\",
+  "WorkspaceRootPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|d:\\source_code\\sc_prn231\\lab\\project_group 2_prn231\\icreamshopapi\\controllers\\icecreamapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\controllers\\icecreamapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\services\\icecreamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\services\\icecreamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|d:\\source_code\\sc_prn231\\lab\\project_group 2_prn231\\icreamshopapi\\repository\\icecreamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\repository\\icecreamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\models\\icecream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\icecream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|d:\\source_code\\sc_prn231\\lab\\project_group 2_prn231\\icreamshopapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|d:\\source_code\\sc_prn231\\lab\\project_group 2_prn231\\icreamshopapi\\data\\creamdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\data\\creamdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|d:\\source_code\\sc_prn231\\lab\\project_group 2_prn231\\icreamshopapi\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|d:\\source_code\\sc_prn231\\icreamweb\\icreamshopapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\icreamshopapi\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|d:\\source_code\\sc_prn231\\lab\\project_group 2_prn231\\icreamshopapi\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\controllers\\icecreamapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\controllers\\icecreamapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\models\\icecream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\icecream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\data\\creamdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\data\\creamdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\services\\icecreamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\services\\icecreamservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\repository\\icecreamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\repository\\icecreamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75FB7683-4584-4AC0-9C71-3D35406F591D}|IcreamShopCilent\\IcreamShopCilent.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopcilent\\icreamshopcilent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{75FB7683-4584-4AC0-9C71-3D35406F591D}|IcreamShopCilent\\IcreamShopCilent.csproj|solutionrelative:icreamshopcilent\\icreamshopcilent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F35BAAB8-9178-450C-B1ED-5B222DC61392}|IcreamShopApi\\IcreamShopApi.csproj|solutionrelative:icreamshopapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{75FB7683-4584-4AC0-9C71-3D35406F591D}|IcreamShopCilent\\IcreamShopCilent.csproj|D:\\source_code\\SC_PRN231\\IcreamWeb\\icreamshopcilent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{75FB7683-4584-4AC0-9C71-3D35406F591D}|IcreamShopCilent\\IcreamShopCilent.csproj|solutionrelative:icreamshopcilent\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 162,
-          "SelectedChildIndex": 54,
+          "SelectedChildIndex": 52,
           "Children": [
             {
               "$type": "Bookmark",
@@ -269,215 +273,197 @@
               "Name": "ST:111:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:118:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:119:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:121:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:120:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IceCream.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\IceCream.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\IceCream.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\IceCream.cs",
-              "RelativeToolTip": "IcreamShopApi\\Models\\IceCream.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAmAAAA",
+              "DocumentIndex": 1,
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\OrderDetail.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\OrderDetail.cs",
+              "RelativeToolTip": "IcreamShopApi\\Models\\OrderDetail.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:42:27.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T06:40:25.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "IceCreamApiController.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Controllers\\IceCreamApiController.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Controllers\\IceCreamApiController.cs",
               "RelativeDocumentMoniker": "IcreamShopApi\\Controllers\\IceCreamApiController.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Controllers\\IceCreamApiController.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Controllers\\IceCreamApiController.cs",
               "RelativeToolTip": "IcreamShopApi\\Controllers\\IceCreamApiController.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAswDwAAAACAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBsAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T07:30:58.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Category.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Category.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Category.cs",
-              "RelativeToolTip": "IcreamShopApi\\Models\\Category.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T05:52:26.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Review.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Review.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Review.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Review.cs",
-              "RelativeToolTip": "IcreamShopApi\\Models\\Review.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAwBUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:58:25.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T05:55:11.086Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Users.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Users.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Users.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Users.cs",
-              "RelativeToolTip": "IcreamShopApi\\Models\\Users.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T16:42:18.645Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "Cart.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Cart.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Cart.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Cart.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Cart.cs",
               "RelativeToolTip": "IcreamShopApi\\Models\\Cart.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAQwBUAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:56:24.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T10:54:17.872Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IceCreamService.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Services\\IceCreamService.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Services\\IceCreamService.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Services\\IceCreamService.cs",
-              "RelativeToolTip": "IcreamShopApi\\Services\\IceCreamService.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowDIAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Program.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Program.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Program.cs",
+              "RelativeToolTip": "IcreamShopApi\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:53:49.265Z",
+              "WhenOpened": "2025-03-06T10:21:36.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IceCreamRepository.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Repository\\IceCreamRepository.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Repository\\IceCreamRepository.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Repository\\IceCreamRepository.cs",
-              "RelativeToolTip": "IcreamShopApi\\Repository\\IceCreamRepository.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAkwDoAAAAAAAAA",
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Order.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Order.cs",
+              "RelativeToolTip": "IcreamShopApi\\Models\\Order.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:42:38.49Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T06:33:18.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IceCream.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\IceCream.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\IceCream.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\IceCream.cs",
+              "RelativeToolTip": "IcreamShopApi\\Models\\IceCream.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwA8AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T02:27:40.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Users.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Users.cs",
+              "RelativeToolTip": "IcreamShopApi\\Models\\Users.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T06:40:56.037Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CreamDbContext.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Data\\CreamDbContext.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Data\\CreamDbContext.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Data\\CreamDbContext.cs",
-              "RelativeToolTip": "IcreamShopApi\\Data\\CreamDbContext.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAUwAoAAAAdAAAA",
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Repository\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Repository\\CategoryRepository.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Repository\\CategoryRepository.cs",
+              "RelativeToolTip": "IcreamShopApi\\Repository\\CategoryRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T07:41:05.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T17:32:01.964Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\appsettings.json",
-              "RelativeDocumentMoniker": "IcreamShopApi\\appsettings.json",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\appsettings.json",
-              "RelativeToolTip": "IcreamShopApi\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-05T08:15:38.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Order.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\Order.cs",
-              "RelativeToolTip": "IcreamShopApi\\Models\\Order.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAQwBQAAAAAAAAA",
+              "DocumentIndex": 10,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Category.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Category.cs",
+              "RelativeToolTip": "IcreamShopApi\\Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:57:46.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T06:39:07.488Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "OrderDetail.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\OrderDetail.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\OrderDetail.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Models\\OrderDetail.cs",
-              "RelativeToolTip": "IcreamShopApi\\Models\\OrderDetail.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAQwBQAAAAAAAAA",
+              "Title": "CreamDbContext.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Data\\CreamDbContext.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Data\\CreamDbContext.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Data\\CreamDbContext.cs",
+              "RelativeToolTip": "IcreamShopApi\\Data\\CreamDbContext.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAD8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:58:05.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-06T10:24:42.579Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Repository\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Repository\\CategoryRepository.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Repository\\CategoryRepository.cs",
-              "RelativeToolTip": "IcreamShopApi\\Repository\\CategoryRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAADAAAA",
+              "DocumentIndex": 9,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Models\\Review.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Models\\Review.cs",
+              "RelativeToolTip": "IcreamShopApi\\Models\\Review.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAzwBMAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-05T06:27:52.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Repository\\UserRepository.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Repository\\UserRepository.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Repository\\UserRepository.cs",
-              "RelativeToolTip": "IcreamShopApi\\Repository\\UserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T17:41:19.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T06:40:32.037Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Program.cs",
-              "RelativeDocumentMoniker": "IcreamShopApi\\Program.cs",
-              "ToolTip": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\Program.cs",
-              "RelativeToolTip": "IcreamShopApi\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "Title": "IceCreamRepository.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Repository\\IceCreamRepository.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Repository\\IceCreamRepository.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Repository\\IceCreamRepository.cs",
+              "RelativeToolTip": "IcreamShopApi\\Repository\\IceCreamRepository.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAYwCAAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T18:06:24.205Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T02:27:45.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IceCreamService.cs",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Services\\IceCreamService.cs",
+              "RelativeDocumentMoniker": "IcreamShopApi\\Services\\IceCreamService.cs",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\Services\\IceCreamService.cs",
+              "RelativeToolTip": "IcreamShopApi\\Services\\IceCreamService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBcAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T05:53:00.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IcreamShopCilent",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
+              "RelativeDocumentMoniker": "IcreamShopCilent\\IcreamShopCilent.csproj",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
+              "RelativeToolTip": "IcreamShopCilent\\IcreamShopCilent.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-06T10:21:33.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\appsettings.json",
+              "RelativeDocumentMoniker": "IcreamShopApi\\appsettings.json",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\appsettings.json",
+              "RelativeToolTip": "IcreamShopApi\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-06T10:20:29.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\appsettings.json",
+              "RelativeDocumentMoniker": "IcreamShopCilent\\appsettings.json",
+              "ToolTip": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\appsettings.json",
+              "RelativeToolTip": "IcreamShopCilent\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-06T10:11:51.914Z"
             }
           ]
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BSyNMhFtzRRgAjZScHkhcISMyqVD12/PBDgjZiUrr7H1K6t/jYscLLlqBRuPw9LmPwAoNHLYZY1l+1LKJRCn1Q==",
+  "dgSpecHash": "3TBrmv4wav7YbEWiUUS7d8k2+GQfl51Mm40gL6DCVmqhpK3nnZcnBKydO3XQ3VaN5eMAwJ51hU1DQs0na2jtjA==",
   "success": true,
-  "projectFilePath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopApi\\IcreamShopApi.csproj",
+  "projectFilePath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopApi\\IcreamShopApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tinht\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\tinht\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

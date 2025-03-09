@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj": {}
+    "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj": {}
   },
   "projects": {
-    "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj": {
+    "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj",
+        "projectUniqueName": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
         "projectName": "IcreamShopCilent",
-        "projectPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\IcreamShopCilent.csproj",
+        "projectPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\IcreamShopCilent.csproj",
         "packagesPath": "C:\\Users\\tinht\\.nuget\\packages\\",
-        "outputPath": "D:\\source_code\\SC_PRN231\\LAB\\project_group 2_prn231\\IcreamShopCilent\\obj\\",
+        "outputPath": "D:\\source_code\\SC_PRN231\\IcreamWeb\\IcreamShopCilent\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tinht\\AppData\\Roaming\\NuGet\\NuGet.Config",
