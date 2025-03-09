@@ -1,0 +1,20 @@
+# Thư mục build và debug
+obj/
+bin/
+
+# File của Visual Studio
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.nuget.dgspec.json
+*.csproj.nuget.g.props
+
+# Thư mục cache của NuGet
+packages/
+project.nuget.cache
+project.assets.json
+
+# File tạm thời
+*.log
+*.tmp

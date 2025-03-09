@@ -53,5 +53,12 @@ namespace IcreamShopApi.Repository
             _context.Entry(existingCart).CurrentValues.SetValues(cart);
             await _context.SaveChangesAsync();
         }
-    }
+		public async Task<List<Cart>> GetCartsByUserId(int userId)
+		{
+			return await _context.Carts
+				.Include(c => c.IceCream)
+				.Where(c => c.UserId == userId)
+				.ToListAsync();
+		}
+	}
 }

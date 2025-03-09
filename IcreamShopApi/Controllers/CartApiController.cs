@@ -50,5 +50,20 @@ namespace IcreamShopApi.Controllers
             await _cartService.DeleteCart(id);
             return Ok();
         }
-    }
+
+
+		[HttpGet("user/{userId}")]
+		public async Task<ActionResult<List<Cart>>> GetCartsByUserId(int userId)
+		{
+			try
+			{
+				var carts = await _cartService.GetCartsByUserIdAsync(userId);
+				return Ok(carts);
+			}
+			catch (Exception ex)
+			{
+				return NotFound(new { message = ex.Message });
+			}
+		}
+	}
 }

@@ -62,5 +62,16 @@ namespace IcreamShopApi.Services
             }
             await _cartRepository.EditCart(cart);
         }
-    } 
+
+
+		public async Task<List<Cart>> GetCartsByUserIdAsync(int userId)
+		{
+			var carts = await _cartRepository.GetCartsByUserId(userId);
+			if (carts == null || !carts.Any())
+			{
+				throw new Exception($"No carts found for user with ID {userId}");
+			}
+			return carts;
+		}
+	} 
 }
