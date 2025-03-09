@@ -1,6 +1,9 @@
-﻿using IcreamShopApi.Models;
+﻿using IcreamShopApi.Data;
+using IcreamShopApi.DTOs;
+using IcreamShopApi.Models;
 using IcreamShopApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace IcreamShopApi.Controllers
 {
@@ -9,6 +12,7 @@ namespace IcreamShopApi.Controllers
     public class OrderApiController : Controller
     {
         private readonly OrderService _orderService;
+        private readonly CreamDbContext _context;
 
         public OrderApiController(OrderService orderService)
         {
@@ -50,5 +54,36 @@ namespace IcreamShopApi.Controllers
             await _orderService.EditOrder(order);
             return Ok();
         }
-    }
+
+
+		[HttpGet("user/{userId}")]
+		public async Task<ActionResult<IEnumerable<OrderDTO>>> GetOrdersByUser(int userId)
+		{
+			var orders = await _context.Orders
+				.Where(o => o.UserId == userId)
+				.Include(o => o.OrderDetails)
+					.ThenInclude(od => od.IceCream) // Lấy thông tin kem
+				.ToListAsync();
+
+			if (orders == null || orders.Count == 0)
+				return NotFound("No orders found for this user.");
+
+			var orderDtos = orders.Select(o => new OrderDTO
+			{
+				OrderId = o.OrderId,
+				TotalPrice = o.TotalPrice,
+				Status = o.Status,
+				OrderDate = o.OrderDate,
+				OrderDetails = o.OrderDetails.Select(od => new OrderDetailDTO
+				{
+					IceCreamName = od.IceCream.Name,
+					ImageUrl = od.IceCream.ImageUrl,
+					Quantity = od.Quantity,
+					Price = od.Price
+				}).ToList()
+			}).ToList();
+
+			return Ok(orderDtos);
+		}
+	}
 }

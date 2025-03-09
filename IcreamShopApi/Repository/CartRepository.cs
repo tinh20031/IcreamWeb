@@ -12,12 +12,14 @@ namespace IcreamShopApi.Repository
             _context = context;
         }
 
-        public async Task<List<Cart>> GetAllCarts()
-        {
-            return await _context.Carts.ToListAsync();
-        }
+		public async Task<List<Cart>> GetAllCarts()
+		{
+			return await _context.Carts
+				.Include(c => c.IceCream) 
+				.ToListAsync();
+		}
 
-        public async Task<Cart> GetCartById(int Id)
+		public async Task<Cart> GetCartById(int Id)
         {
             return await _context.Carts.FindAsync(Id);
         }

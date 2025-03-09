@@ -889,10 +889,7 @@
           "System.IdentityModel.Tokens.Jwt": "8.3.0"
         },
         "runtime": {
-          "IcreamShopApi.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "IcreamShopApi.dll": {}
         }
       }
     }

@@ -50,35 +50,35 @@ namespace IcreamShopApi.Controllers
             return Ok("User registered successfully");
         }
 
-        // Đăng nhập và trả về token JWT
+		// Đăng nhập và trả về token JWT
         /*[HttpPost("login")]
-        public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
-        {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(loginModel.Password, user.PasswordHash))
-                return Unauthorized("Invalid email or password.");
+		public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
+		{
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
+			if (user == null || !BCrypt.Net.BCrypt.Verify(loginModel.Password, user.PasswordHash))
+				return Unauthorized("Invalid email or password.");
 
-            var claims = new[]
-            {
-                new Claim(ClaimTypes.Name, user.Email),
+			var claims = new[]
+			{
+		new Claim(ClaimTypes.Name, user.Email),
                 new Claim(ClaimTypes.Role, user.Role)
-            };
+    };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddDays(1),
-                signingCredentials: creds
-            );
+			var token = new JwtSecurityToken(
+				issuer: _configuration["Jwt:Issuer"],
+				audience: _configuration["Jwt:Audience"],
+				claims: claims,
+				expires: DateTime.Now.AddDays(1),
+				signingCredentials: creds
+			);
 
-            return Ok(new
-            {
+			return Ok(new
+			{
                 token = new JwtSecurityTokenHandler().WriteToken(token)
-            });
+			});
         }*/
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
@@ -90,22 +90,22 @@ namespace IcreamShopApi.Controllers
             var token = _userService.GenerateJwtToken(user);  // Gọi từ UserService
 
             var authResponse = new AuthResponseDto
-            {
+			{
                 Token = token,
                 Expiration = DateTime.UtcNow.AddDays(1),
-                UserId = user.UserId,
+				UserId = user.UserId,
                 FullName = user.FullName,
-                Email = user.Email,
+				Email = user.Email,
                 Role = user.Role,
                 PhoneNumber = user.PhoneNumber,
                 Address = user.Address
             };
 
             return Ok(authResponse);
-        }
+		}
 
 
-    }
+	}
 
     // Model cho Register và Login
     public class RegisterModel

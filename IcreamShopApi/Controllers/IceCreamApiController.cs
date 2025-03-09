@@ -24,6 +24,15 @@ namespace IcreamShopApi.Controllers
 			return Ok(iceCreams);
 		}
 
+		[HttpGet("search")]
+		//search 
+		public async Task<ActionResult<List<IceCream>>> search(string name )
+		{
+			var search = await _iceCreamService.search(name);
+			return Ok(search);
+		}
+
+
 		//get kem theo id 
 		[HttpGet("{id}")]
 		public async Task<ActionResult<IceCream>> GetIcreamById( int id)

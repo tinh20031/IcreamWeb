@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace IcreamShopApi.Models
 {
@@ -13,7 +14,9 @@ namespace IcreamShopApi.Models
 		public decimal Price { get; set; }
 
 		// Khóa ngoại
+		[JsonIgnore]
 		public Order Order { get; set; }
+		[JsonIgnore]
 		public IceCream IceCream { get; set; }
 	}
 
