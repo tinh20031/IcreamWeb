@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IcreamShopApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85f473d5932ac264169399c0b8f5833268a1cac5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f95849f1580165202dda461952a8988707c8199a")]
 [assembly: System.Reflection.AssemblyProductAttribute("IcreamShopApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IcreamShopApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
