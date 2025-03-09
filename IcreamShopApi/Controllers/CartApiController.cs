@@ -9,11 +9,14 @@ namespace IcreamShopApi.Controllers
     public class CartApiController : ControllerBase
     {
         private readonly CartService _cartService;
+        private readonly OrderService _orderService;
 
-        public CartApiController(CartService cartService)
+        public CartApiController(CartService cartService, OrderService orderService)
         {
             _cartService = cartService;
-        }
+            _orderService = orderService;
+
+		}
 
         [HttpGet]
         public async Task<ActionResult<List<Cart>>> GetAllCarts()
@@ -63,6 +66,21 @@ namespace IcreamShopApi.Controllers
 			catch (Exception ex)
 			{
 				return NotFound(new { message = ex.Message });
+			}
+		}
+
+
+		[HttpPost("create-order/{userId}")]
+		public async Task<ActionResult<Order>> CreateOrderFromCart(int userId)
+		{
+			try
+			{
+				var order = await _orderService.CreateOrderFromCart(userId);
+				return Ok(order);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
 			}
 		}
 	}

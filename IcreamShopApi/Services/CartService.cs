@@ -64,7 +64,7 @@ namespace IcreamShopApi.Services
         }
 
 
-		public async Task<List<Cart>> GetCartsByUserIdAsync(int userId)
+		public async Task<List<CartDTO>> GetCartsByUserIdAsync(int userId)
 		{
 			var carts = await _cartRepository.GetCartsByUserId(userId);
 			if (carts == null || !carts.Any())

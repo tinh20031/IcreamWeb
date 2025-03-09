@@ -2,6 +2,7 @@
 using IcreamShopApi.Repository;
 using IcreamShopApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -12,6 +13,16 @@ var builder = WebApplication.CreateBuilder(args);
 // C?u hình d?ch v? cho Razor Pages và API
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
+builder.Services.AddScoped<CartRepository>();
+builder.Services.AddScoped<OrderRepository>();
+builder.Services.AddScoped<OrderDetailRepository>();
+builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<OrderDetailService>();
+builder.Services.AddScoped<OrderDetailRepository>();
+
+
+
 
 // C?u hình Authentication s? d?ng JWT Bearer
 builder.Services.AddAuthentication(options =>

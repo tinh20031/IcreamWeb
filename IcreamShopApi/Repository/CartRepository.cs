@@ -1,4 +1,5 @@
 ﻿using IcreamShopApi.Data;
+using IcreamShopApi.DTOs;
 using IcreamShopApi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -53,12 +54,31 @@ namespace IcreamShopApi.Repository
             _context.Entry(existingCart).CurrentValues.SetValues(cart);
             await _context.SaveChangesAsync();
         }
-		public async Task<List<Cart>> GetCartsByUserId(int userId)
+		public async Task<List<CartDTO>> GetCartsByUserId(int userId)
 		{
 			return await _context.Carts
-				.Include(c => c.IceCream)
+				.Include(c => c.IceCream) // Bao gồm thông tin IceCream
 				.Where(c => c.UserId == userId)
+				.Select(c => new CartDTO
+				{
+					CartId = c.CartId,
+					UserId = c.UserId,
+					IceCreamId = c.IceCreamId,
+					Quantity = c.Quantity,
+					CreatedAt = c.CreatedAt,
+					IceCreamName = c.IceCream.Name,
+					Image = c.IceCream.ImageUrl,
+					Price = c.IceCream.Price
+				})
 				.ToListAsync();
+		}
+
+
+		public async Task DeleteCartsByUserId(int userId)
+		{
+			var carts = await _context.Carts.Where(c => c.UserId == userId).ToListAsync();
+			_context.Carts.RemoveRange(carts);
+			await _context.SaveChangesAsync();
 		}
 	}
 }
