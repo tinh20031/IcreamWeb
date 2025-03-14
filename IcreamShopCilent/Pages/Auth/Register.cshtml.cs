@@ -1,7 +1,8 @@
-using Azure;
+Ôªøusing Azure;
 using IcreamShopApi.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text.Json;
 
 namespace IcreamShopCilent.Pages.Auth
 {
@@ -24,17 +25,17 @@ namespace IcreamShopCilent.Pages.Auth
             {
                 return Page();
             }
-
+            Console.WriteLine($"RegisterDto: {JsonSerializer.Serialize(RegisterDto)}"); // Log d·ªØ li·ªáu
             var response = await _httpClient.PostAsJsonAsync("api/auth/register", RegisterDto);
 
             if (response.IsSuccessStatusCode)
             {
-                // Handle success, cÛ th? redirect ??n trang ??ng nh?p ho?c thÙng b·o th‡nh cÙng
+                // Handle success, c√≥ th? redirect ??n trang ??ng nh?p ho?c th√¥ng b√°o th√†nh c√¥ng
                 return RedirectToPage("/Auth/Login");
             }
             else
             {
-                // Handle failure, cÛ th? l?y chi ti?t l?i t? API ?? thÙng b·o
+                // Handle failure, c√≥ th? l?y chi ti?t l?i t? API ?? th√¥ng b√°o
                 var errorMessage = await response.Content.ReadAsStringAsync();
                 ModelState.AddModelError(string.Empty, $"Registration failed: {errorMessage}");
                 return Page();
