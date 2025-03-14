@@ -1,0 +1,149 @@
+﻿@page
+@model IcreamShopCilent.Pages.User.IndexModel
+@{
+    ViewData["Title"] = "Ice Cream Shop";
+    Layout = "_Layout"; // Kế thừa layout chung
+}
+
+@section Styles {
+    <style>
+        /* Style cho trang Home */
+        .home-container {
+            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0, #ffe6f2, #e6f7ff);
+            min-height: 100vh;
+        }
+
+        .search-filter {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .form-control-search {
+            border-radius: 10px;
+            border: 2px solid #ffd6e8;
+            transition: border-color 0.3s;
+        }
+
+            .form-control-search:focus {
+                border-color: #ff6f91;
+                box-shadow: none;
+            }
+
+        .btn-icecream {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 8px 15px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn-icecream:hover {
+                transform: scale(1.05);
+            }
+
+        .icecream-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            overflow: hidden;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+            .icecream-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-title {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff6f91;
+            font-size: 1.2rem;
+        }
+
+        .card-text {
+            color: #555;
+        }
+
+        .btn-add-cart {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn-add-cart:hover {
+                transform: scale(1.05);
+            }
+
+        .icecream-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+    </style>
+}
+
+<div class="home-container">
+    <div class="search-filter">
+        <div class="input-group w-50">
+            <input id="searchInput" type="text" class="form-control form-control-search" placeholder="Search for ice cream..." aria-label="Search" />
+            <button class="btn btn-icecream" type="button" onclick="searchIceCream()">Search <span class="icecream-emoji">🔍</span></button>
+        </div>
+    </div>
+
+    <div id="iceCreamList" class="row row-cols-1 row-cols-md-3 g-4"></div>
+</div>
+
+<script>
+    async function fetchIceCreams(query = "") {
+        let baseUrl = "https://localhost:7283";  
+        let url = query ? `${baseUrl}/api/IceCreamApi/search?name=${query}` : `${baseUrl}/api/IceCreamApi`;
+
+        let response = await fetch(url);
+        let data = await response.json();
+        renderIceCreams(data);
+    }
+
+    function renderIceCreams(data) {
+        let container = document.getElementById("iceCreamList");
+        container.innerHTML = "";
+        data.forEach(item => {
+            container.innerHTML += `
+                    <div class="col">
+                        <div class="card icecream-card">
+                            <img src="${item.imageUrl}" class="card-img-top" alt="${item.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">$${item.price.toFixed(2)}</p>
+                                <button class="btn btn-add-cart" onclick="addToCart(${item.id})">Add to Cart <span class="icecream-emoji">🛒</span></button>
+                            </div>
+                        </div>
+                    </div>`;
+        });
+    }
+
+    function searchIceCream() {
+        let query = document.getElementById("searchInput").value;
+        fetchIceCreams(query);
+    }
+
+    function addToCart(id) {
+        alert(`Added ice cream ID: ${id} to cart!`);
+    }
+
+    fetchIceCreams();
+</script>

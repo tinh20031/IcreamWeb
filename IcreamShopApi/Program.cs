@@ -1,4 +1,5 @@
 ﻿using IcreamShopApi.Data;
+using IcreamShopApi.Models;
 using IcreamShopApi.Repository;
 using IcreamShopApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -6,6 +7,8 @@ using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OData.Edm;
+using Microsoft.OData.ModelBuilder;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,11 +23,27 @@ builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<OrderDetailService>();
 builder.Services.AddScoped<OrderDetailRepository>();
+builder.Services.AddControllers().AddOData(opt => opt
+    .AddRouteComponents("odata", GetEdmModel())
+    .Filter()     
+    .Select()      
+    .Expand()   
+    .OrderBy()      
+    .Count()       
+    .SetMaxTop(100) 
+);
+
+
+IEdmModel GetEdmModel()
+{
+    var builder = new ODataConventionModelBuilder();
+    builder.EntitySet<IceCream>("IceCreams"); 
+    builder.EntitySet<Category>("Categories"); 
+    return builder.GetEdmModel();
+}
 
 
 
-
-// C?u hình Authentication s? d?ng JWT Bearer
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -44,19 +63,18 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-//DB
+
 builder.Services.AddDbContext<CreamDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Thêm UserService cho các yêu c?u ??ng ký và ??ng nh?p
+
 builder.Services.AddScoped<IUserService, UserService>();
 
-// Cấu hình CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
-        policy.WithOrigins("https://localhost:7101")  // Thay thế bằng URL frontend của bạn
+        policy.WithOrigins("https://localhost:7068") 
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -80,6 +98,10 @@ builder.Services.AddScoped<OrderDetailRepository>();
 builder.Services.AddScoped<OrderDetailService>();
 builder.Services.AddScoped<ReviewRepository>();
 builder.Services.AddScoped<ReviewService>();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+});
 
 
 var app = builder.Build();
