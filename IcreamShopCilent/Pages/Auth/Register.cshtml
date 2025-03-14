@@ -1,26 +1,118 @@
 ﻿@page
 @model IcreamShopCilent.Pages.Auth.RegisterModel
-<form method="post">
-    <div class="form-group">
-        <label for="username">Full Name</label>
-        <input type="text" id="username" asp-for="RegisterDto.FullName" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" asp-for="RegisterDto.Email" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label for="tel">Phone</label>
-        <input type="tel" id="tel" asp-for="RegisterDto.PhoneNumber" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label for="Address">Address</label>
-        <input type="text" id="text" asp-for="RegisterDto.Address" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" asp-for="RegisterDto.Password" class="form-control" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
+@{
+    Layout = "_Layout"; // Kế thừa layout chung để hiển thị header
+}
 
+@section Styles {
+    <style>
+        /* Style cho trang Register */
+        .register-container {
+            background: linear-gradient(135deg, #fff3e0, #ffe6f2, #e6f7ff); /* Gradient nền giống trang Login */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background: white;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .card-header {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70); /* Gradient hồng-vàng */
+            color: white;
+            border-radius: 20px 20px 0 0;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Font vui nhộn */
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #ffd6e8; /* Viền hồng nhạt */
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #ff6f91; /* Viền hồng đậm khi focus */
+            box-shadow: none;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #ff6f91; /* Màu hồng đậm cho label */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .btn-icecream {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70); /* Gradient cho nút */
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+            width: 100%;
+        }
+
+        .btn icecream:hover {
+            transform: scale(1.05);
+        }
+
+        .icecream-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+    </style>
+}
+
+<div class="register-container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Join Our Ice Cream Family! 🍦</h2>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="form-group">
+                    <label for="username" class="form-label">Full Name</label>
+                    <input type="text" id="username" asp-for="RegisterDto.FullName" class="form-control" required placeholder="Your sweet name" />
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" asp-for="RegisterDto.Email" class="form-control" required placeholder="Your email address" />
+                </div>
+                <div class="form-group">
+                    <label for="tel" class="form-label">Phone</label>
+                    <input type="tel" id="tel" asp-for="RegisterDto.PhoneNumber" class="form-control" required placeholder="Your phone number" />
+                </div>
+                <div class="form-group">
+                    <label for="Address" class="form-label">Address</label>
+                    <input type="text" id="text" asp-for="RegisterDto.Address" class="form-control" required placeholder="Where to deliver your ice cream?" />
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" asp-for="RegisterDto.Password" class="form-control" required placeholder="Your secret flavor" />
+                </div>
+                <button type="submit" class="btn btn-primary icecream">Register Now <span class="icecream-emoji">🍨</span></button>
+            </form>
+        </div>
+    </div>
+</div>

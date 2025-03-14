@@ -56,6 +56,13 @@ namespace IcreamShopApi.Controllers
             await _categoryService.EditCategory(category);
             return Ok();
         }
-    }
+		[HttpGet("{id}/ice_cream")]
+		public async Task<ActionResult<List<IceCream>>> GetProductsByCategoryId(int id)
+		{
+			var products = await _categoryService.GetProductsByCategoryId(id);
+			if (products == null || !products.Any()) return NotFound("Không tìm thấy sản phẩm cho danh mục này.");
+			return Ok(products);
+		}
+	}
 }
  

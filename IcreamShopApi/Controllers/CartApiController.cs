@@ -9,11 +9,14 @@ namespace IcreamShopApi.Controllers
     public class CartApiController : ControllerBase
     {
         private readonly CartService _cartService;
+        private readonly OrderService _orderService;
 
-        public CartApiController(CartService cartService)
+        public CartApiController(CartService cartService, OrderService orderService)
         {
             _cartService = cartService;
-        }
+            _orderService = orderService;
+
+		}
 
         [HttpGet]
         public async Task<ActionResult<List<Cart>>> GetAllCarts()
@@ -50,5 +53,35 @@ namespace IcreamShopApi.Controllers
             await _cartService.DeleteCart(id);
             return Ok();
         }
-    }
+
+
+		[HttpGet("user/{userId}")]
+		public async Task<ActionResult<List<Cart>>> GetCartsByUserId(int userId)
+		{
+			try
+			{
+				var carts = await _cartService.GetCartsByUserIdAsync(userId);
+				return Ok(carts);
+			}
+			catch (Exception ex)
+			{
+				return NotFound(new { message = ex.Message });
+			}
+		}
+
+
+		[HttpPost("create-order/{userId}")]
+		public async Task<ActionResult<Order>> CreateOrderFromCart(int userId)
+		{
+			try
+			{
+				var order = await _orderService.CreateOrderFromCart(userId);
+				return Ok(order);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
+			}
+		}
+	}
 }

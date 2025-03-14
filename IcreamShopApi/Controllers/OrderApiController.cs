@@ -14,10 +14,12 @@ namespace IcreamShopApi.Controllers
         private readonly OrderService _orderService;
         private readonly CreamDbContext _context;
 
-        public OrderApiController(OrderService orderService)
+        public OrderApiController(OrderService orderService, CreamDbContext context)
         {
             _orderService = orderService;
-        }
+            _context = context;
+
+		}
 
         [HttpGet]
         public async Task<ActionResult<List<Order>>> GetAllOrders()

@@ -1,6 +1,7 @@
 ﻿using IcreamShopApi.Data;
 using IcreamShopApi.Models;
 using IcreamShopApi.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace IcreamShopApi.Services
 {
@@ -45,5 +46,11 @@ namespace IcreamShopApi.Services
             }
             await _categoryRepository.EditCategory(category);
         }
-    }
+		public async Task<List<IceCream>> GetProductsByCategoryId(int categoryId)
+		{
+			return await _context.IceCreams
+				.Where(p => p.CategoryId == categoryId)
+				.ToListAsync();
+		}
+	}
 }
