@@ -1,6 +1,7 @@
 ﻿using IcreamShopApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using IcreamShopApi.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IcreamShopApi.Controllers
 {
@@ -32,6 +33,7 @@ namespace IcreamShopApi.Controllers
         }
 
         //add user
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<User>> AddUser([FromBody] User user)
         {
@@ -40,6 +42,7 @@ namespace IcreamShopApi.Controllers
         }
 
         //delete user
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {
