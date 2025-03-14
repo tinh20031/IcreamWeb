@@ -8,12 +8,16 @@
 
   <ItemGroup>
     <Compile Remove="Components\**" />
+    <Compile Remove="Pages\Users\**" />
     <Compile Remove="root\**" />
     <Content Remove="Components\**" />
+    <Content Remove="Pages\Users\**" />
     <Content Remove="root\**" />
     <EmbeddedResource Remove="Components\**" />
+    <EmbeddedResource Remove="Pages\Users\**" />
     <EmbeddedResource Remove="root\**" />
     <None Remove="Components\**" />
+    <None Remove="Pages\Users\**" />
     <None Remove="root\**" />
   </ItemGroup>
 
@@ -25,11 +29,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IcreamShopApi\IcreamShopApi.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\Admins\" />
-    <Folder Include="Pages\Users\" />
   </ItemGroup>
 
 </Project>

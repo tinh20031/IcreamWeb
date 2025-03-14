@@ -1,5 +1,6 @@
 ﻿using IcreamShopApi.Models;
 using IcreamShopApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.WebSockets;
 
@@ -33,6 +34,7 @@ namespace IcreamShopApi.Controllers
         }
 
         //add category
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<Category>> AddCategory([FromBody] Category category)
         {
@@ -41,6 +43,7 @@ namespace IcreamShopApi.Controllers
         }
 
         //delete category
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Category>> DeleteCategory(int id)
         {
@@ -48,6 +51,7 @@ namespace IcreamShopApi.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         //edit category
         public async Task<ActionResult<Category>> EditCategory(int id, [FromBody] Category category)

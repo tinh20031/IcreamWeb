@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text;
 using System.Text.Json;
+using IcreamShopCilent.Services;
 
 namespace IcreamShopCilent.Pages.Auth
 {
@@ -43,17 +44,29 @@ namespace IcreamShopCilent.Pages.Auth
             if (!ModelState.IsValid)
                 return Page();
 
-            var loginContent = new StringContent(JsonSerializer.Serialize(LoginDto), Encoding.UTF8, "application/json");
-            var response = await _httpClient.PostAsync("https://localhost:7283/api/auth/login", loginContent);
+            var authService = new AuthService(_httpClient);
+            var (token, role) = await authService.LoginAsync(LoginDto.Email, LoginDto.Password);
 
-            if (response.IsSuccessStatusCode)
+            Console.WriteLine($"Login attempt - Token: {token}, Role: {role}");
+
+            if (token != null)
             {
-                var authResponse = await response.Content.ReadAsStringAsync();
-                return RedirectToPage("/Index");
+                HttpContext.Session.SetString("JWToken", token);
+                HttpContext.Session.SetString("Role", role);
+
+                if (string.Equals(role, "admin", StringComparison.OrdinalIgnoreCase))
+                    return RedirectToPage("/Admins/DashboardModel");
+                return RedirectToPage("/Index"); // Mặc định cho các role khác
             }
 
             ModelState.AddModelError("", "Email or password is incorrect");
             return Page();
+        }
+
+        public IActionResult OnPostLogout()
+        {
+            HttpContext.Session.Clear(); // Xóa toàn bộ session
+            return RedirectToPage("/Auth/Login");
         }
     }
 }
