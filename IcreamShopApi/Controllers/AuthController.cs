@@ -38,10 +38,10 @@ namespace IcreamShopApi.Controllers
             {
                 FullName = registerModel.FullName,
                 Email = registerModel.Email,
-                PhoneNumber = registerModel.Phone,
+                PhoneNumber = registerModel.PhoneNumber,
                 Address = registerModel.Address,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerModel.Password),
-                Role = registerModel.Role // "Customer" or "Admin"
+                Role = registerModel.Role // "user" or "Admin"
             };
 
             _context.Users.Add(user);
@@ -51,35 +51,7 @@ namespace IcreamShopApi.Controllers
         }
 
 		// Đăng nhập và trả về token JWT
-        /*[HttpPost("login")]
-		public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
-		{
-			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
-			if (user == null || !BCrypt.Net.BCrypt.Verify(loginModel.Password, user.PasswordHash))
-				return Unauthorized("Invalid email or password.");
-
-			var claims = new[]
-			{
-		new Claim(ClaimTypes.Name, user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
-    };
-
-			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
-			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-			var token = new JwtSecurityToken(
-				issuer: _configuration["Jwt:Issuer"],
-				audience: _configuration["Jwt:Audience"],
-				claims: claims,
-				expires: DateTime.Now.AddDays(1),
-				signingCredentials: creds
-			);
-
-			return Ok(new
-			{
-                token = new JwtSecurityTokenHandler().WriteToken(token)
-			});
-        }*/
+        
         [HttpPost("login")]
         public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
         {
@@ -113,9 +85,9 @@ namespace IcreamShopApi.Controllers
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
         public string Address { get; set; }
-        public string Role { get; set; } = "Customer";
+        public string Role { get; set; } = "user";
     }
 
     public class LoginModel
