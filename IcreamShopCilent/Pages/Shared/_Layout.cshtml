@@ -4,10 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - IcreamShopCilent</title>
+
+    <!-- Bootstrap & Custom CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/IcreamShopCilent.styles.css" asp-append-version="true" />
-    @RenderSection("Styles", required: false) <!-- Thêm dòng này -->
+
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
@@ -16,11 +19,14 @@
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
                     IcreamShopCilent 🍦
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+                <!-- Button Mobile Menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
@@ -28,39 +34,33 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
-                        <ul class="navbar-nav">
-                            @if (Context.Session.GetString("JWToken") != null) // Kiểm tra session có tồn tại không
-                            {
-                                <a class="nav-link text-dark"
-                                   asp-page="/User/Profile"
-                                   asp-route-id="@Context.Session.GetString("UserId")">
+
+                        @if (!string.IsNullOrEmpty(Context.Session.GetString("JWToken"))) // Kiểm tra user đã đăng nhập
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/User/Profile" asp-route-id="@Context.Session.GetString("UserId")">
                                     👤 @Context.Session.GetString("FullName")
                                 </a>
+                            </li>
 
-
-
-
-
-
-                                <li class="nav-item">
-                                    <form method="post" asp-page="/Auth/Login" asp-page-handler="Logout">
-                                        <button type="submit" class="btn btn-link nav-link text-dark">Logout</button>
-                                    </form>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-area="" asp-page="/Auth/Login">Login</a>
-                                </li>
-                            }
-                        </ul>
-
+                            <li class="nav-item">
+                                <form method="post" asp-page="/Auth/Login" asp-page-handler="Logout">
+                                    <button type="submit" class="btn btn-link nav-link text-dark">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Auth/Login">Login</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -73,6 +73,7 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

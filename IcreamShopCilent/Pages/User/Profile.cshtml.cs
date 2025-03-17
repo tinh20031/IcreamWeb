@@ -20,25 +20,32 @@ namespace IcreamShopCilent.Pages.User
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            Console.WriteLine($"User Profile Page Loaded with ID: {id}");
-
-            if (id == 0)
+            try
             {
-                return NotFound();
+                var response = await _httpClient.GetAsync($"https://localhost:7283/api/UserApi/{id}");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return NotFound();
+                }
+
+                var userJson = await response.Content.ReadAsStringAsync();
+                UserInfo = JsonSerializer.Deserialize<AuthResponseDto>(userJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                if (UserInfo == null)
+                {
+                    return NotFound();
+                }
+
+                return Page();
             }
-
-            var response = await _httpClient.GetAsync($"https://localhost:7283/api/UserApi/{id}");
-
-            if (!response.IsSuccessStatusCode)
+            catch (Exception ex)
             {
-                return NotFound();
+                Console.WriteLine($"Error fetching user profile: {ex.Message}");
+                return StatusCode(500, "Internal server error");
             }
-
-            var userJson = await response.Content.ReadAsStringAsync();
-            UserInfo = JsonSerializer.Deserialize<AuthResponseDto>(userJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            return Page();
         }
+
 
 
     }
