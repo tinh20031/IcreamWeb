@@ -28,9 +28,34 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Auth/Login">Login</a>
-                        </li>
+                        <ul class="navbar-nav">
+                            @if (Context.Session.GetString("JWToken") != null) // Kiểm tra session có tồn tại không
+                            {
+                                <a class="nav-link text-dark"
+                                   asp-page="/User/Profile"
+                                   asp-route-id="@Context.Session.GetString("UserId")">
+                                    👤 @Context.Session.GetString("FullName")
+                                </a>
+
+
+
+
+
+
+                                <li class="nav-item">
+                                    <form method="post" asp-page="/Auth/Login" asp-page-handler="Logout">
+                                        <button type="submit" class="btn btn-link nav-link text-dark">Logout</button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="" asp-page="/Auth/Login">Login</a>
+                                </li>
+                            }
+                        </ul>
+
                     </ul>
                 </div>
             </div>

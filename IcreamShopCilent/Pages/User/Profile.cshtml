@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model IcreamShopCilent.Pages.User.ProfileModel
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+
+<div class="container mt-4">
+    <h2>User Profile</h2>
+    <hr />
+
+    <div class="card p-4">
+        <h4>👤 @Model.UserInfo.FullName</h4>
+        <p><strong>Email:</strong> @Model.UserInfo.Email</p>
+        <p><strong>Phone:</strong> @Model.UserInfo.PhoneNumber</p>
+        <p><strong>Address:</strong> @Model.UserInfo.Address</p>
+        <p><strong>Role:</strong> @Model.UserInfo.Role</p>
+    </div>
+</div>
