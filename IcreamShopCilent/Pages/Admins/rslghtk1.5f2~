@@ -1,0 +1,216 @@
+﻿@page
+@model IcreamShopCilent.Pages.Admins.CategoriesModel
+@{
+    ViewData["Title"] = "Quản Lý Danh Mục";
+}
+
+<h2>Quản Lý Danh Mục</h2>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+    Thêm Danh Mục Mới
+</button>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên Danh Mục</th>
+            <th>Ảnh</th>
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model.Categories)
+        {
+            <tr>
+                <td>@category.CategoryId</td>
+                <td>@category.Name</td>
+                <td><img src="@category.Image" alt="@category.Name" style="max-width: 100px;" /></td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="openEditModal(@category.CategoryId)">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteCategory(@category.CategoryId)">Xóa</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal Thêm Danh Mục -->
+<div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addCategoryModalLabel">Thêm Danh Mục Mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addCategoryForm" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label">Tên Danh Mục</label>
+                        <input type="text" class="form-control" id="addName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ảnh</label>
+                        <input type="file" class="form-control" id="addImage" accept="image/*" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="addCategory()">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Sửa Danh Mục -->
+<div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCategoryModalLabel">Sửa Thông Tin Danh Mục</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editCategoryForm" enctype="multipart/form-data">
+                    <input type="hidden" id="editCategoryId">
+                    <div class="mb-3">
+                        <label class="form-label">Tên Danh Mục</label>
+                        <input type="text" class="form-control" id="editName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ảnh (để trống nếu không thay đổi)</label>
+                        <input type="file" class="form-control" id="editImage" accept="image/*">
+                        <img id="currentImage" src="" alt="Ảnh hiện tại" style="max-width: 100px; margin-top: 10px;" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="editCategory()">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const apiUrl = "https://localhost:7283/api/CategoryApi";
+        const token = "@HttpContext.Session.GetString("JwtToken")";
+
+        async function loadCategories() {
+            try {
+                const response = await fetch(apiUrl, {
+                    headers: { 
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to load categories');
+                window.location.reload();
+            } catch (error) {
+                console.error('Error loading categories:', error);
+                alert('Không thể tải danh sách danh mục');
+            }
+        }
+
+        async function addCategory() {
+            const formData = new FormData();
+            formData.append("name", document.getElementById("addName").value);
+            formData.append("image", document.getElementById("addImage").files[0]);
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Thêm thất bại: ${errorText}`);
+                }
+
+                $("#addCategoryModal").modal("hide");
+                await loadCategories();
+            } catch (error) {
+                console.error('Error adding category:', error);
+                alert('Lỗi khi thêm danh mục: ' + error.message);
+            }
+        }
+
+        async function openEditModal(id) {
+            try {
+                const response = await fetch(`${apiUrl}/${id}`, {
+                    headers: { 
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const category = await response.json();
+
+                document.getElementById("editCategoryId").value = category.categoryId || '';
+                document.getElementById("editName").value = category.name || '';
+                document.getElementById("currentImage").src = category.image || '';
+
+                $("#editCategoryModal").modal("show");
+            } catch (error) {
+                console.error('Error opening edit modal:', error);
+                alert('Không thể lấy thông tin danh mục: ' + error.message);
+            }
+        }
+
+        async function editCategory() {
+            const formData = new FormData();
+            formData.append("name", document.getElementById("editName").value);
+            const imageFile = document.getElementById("editImage").files[0];
+            if (imageFile) {
+                formData.append("image", imageFile);
+            }
+
+            try {
+                const categoryId = document.getElementById("editCategoryId").value;
+                const response = await fetch(`${apiUrl}/${categoryId}`, {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Cập nhật thất bại: ${errorText}`);
+                }
+
+                $("#editCategoryModal").modal("hide");
+                await loadCategories();
+            } catch (error) {
+                console.error('Error editing category:', error);
+                alert('Lỗi khi cập nhật danh mục: ' + error.message);
+            }
+        }
+
+        async function deleteCategory(id) {
+            if (confirm("Bạn có chắc chắn muốn xóa danh mục này không?")) {
+                try {
+                    const response = await fetch(`${apiUrl}/${id}`, {
+                        method: "DELETE",
+                        headers: { 
+                            "Authorization": `Bearer ${token}`,
+                            "Content-Type": "application/json"
+                        }
+                    });
+                    if (!response.ok) throw new Error('Xóa thất bại');
+                    await loadCategories();
+                } catch (error) {
+                    console.error('Error deleting category:', error);
+                    alert('Lỗi khi xóa danh mục: ' + error.message);
+                }
+            }
+        }
+    </script>
+}

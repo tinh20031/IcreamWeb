@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using IcreamShopApi.Services;
 using Microsoft.AspNetCore.Authorization;
+using IcreamShopApi.Repository;
+using System.Data;
 
 namespace IcreamShopApi.Controllers
 {
@@ -33,30 +35,40 @@ namespace IcreamShopApi.Controllers
         }
 
         //add user
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<User>> AddUser([FromBody] User user)
         {
-            var addUser = await _userService.AddUser(user);
-            return Ok(addUser);
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash); // Băm mật khẩu
+            await _userService.AddUser(user);
+            return user;
         }
 
         //delete user
-        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {
-            await _userService.DeleteUser(id);
-            return Ok();
+            var result = await _userService.DeleteUser(id);
+            if (!result) return NotFound("Không tìm thấy người dùng");
+            return Ok("Xóa thành công");
         }
 
         //edit user
+
         [HttpPut("{id}")]
         public async Task<ActionResult<User>> EditUser(int id, [FromBody] User user)
         {
-            user.UserId = id;
+            if (id != user.UserId)
+                return BadRequest("ID không khớp");
+
+            var existingUser = await _userService.GetUserById(id);
+            if (existingUser == null)
+                return NotFound("Không tìm thấy người dùng");
+
+            // Giữ nguyên PasswordHash nếu không được gửi lên
+            user.PasswordHash = user.PasswordHash ?? existingUser.PasswordHash;
+
             await _userService.EditUser(user);
-            return Ok();
+            return Ok("Cập nhật thành công");
         }
     }
 }

@@ -54,11 +54,12 @@ builder.Services.AddScoped<IUserService, UserService>();
 // Cấu hình CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigins", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("https://localhost:7101")  // Thay thế bằng URL frontend của bạn
+        policy.WithOrigins("https://localhost:7068")  // Thay thế bằng URL frontend của bạn
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
@@ -85,7 +86,7 @@ builder.Services.AddScoped<ReviewService>();
 var app = builder.Build();
 
 // Sử dụng CORS với policy đã cấu hình
-app.UseCors("AllowSpecificOrigins");
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -95,6 +96,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 
 app.UseAuthentication();
 
