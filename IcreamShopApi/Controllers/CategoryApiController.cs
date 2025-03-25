@@ -35,14 +35,7 @@ namespace IcreamShopApi.Controllers
             return Ok(getCategoryId);
         }
 
-        //add category
-        //[Authorize(Roles = "Admin")]
-        /*[HttpPost]
-        public async Task<ActionResult<Category>> AddCategory([FromBody] Category category)
-        {
-            var addcategory = await _categoryService.AddCategory(category);
-            return Ok(addcategory);
-        }*/
+        
         [HttpPost]
         public async Task<ActionResult<Category>> AddCategory([FromForm] string name, IFormFile image)
         {
@@ -76,14 +69,7 @@ namespace IcreamShopApi.Controllers
             return Ok(addedCategory);
         }
 
-        //delete category
-        //[Authorize(Roles = "Admin")]
-        /*[HttpDelete("{id}")]
-        public async Task<ActionResult<Category>> DeleteCategory(int id)
-        {
-            await _categoryService.DeleteCategory(id);
-            return Ok();
-        }*/
+        
         [HttpDelete("{id}")]
         public async Task<ActionResult<Category>> DeleteCategory(int id)
         {
@@ -101,22 +87,7 @@ namespace IcreamShopApi.Controllers
             return Ok();
         }
 
-        //[Authorize(Roles = "Admin")]
-        /*[HttpPut("{id}")]
-        //edit category
-        public async Task<ActionResult<Category>> EditCategory(int id, [FromBody] Category category)
-        {
-            category.CategoryId = id;
-            await _categoryService.EditCategory(category);
-            return Ok();
-        }
-		[HttpGet("{id}/ice_cream")]
-		public async Task<ActionResult<List<IceCream>>> GetProductsByCategoryId(int id)
-		{
-			var products = await _categoryService.GetProductsByCategoryId(id);
-			if (products == null || !products.Any()) return NotFound("Không tìm thấy sản phẩm cho danh mục này.");
-			return Ok(products);
-		}*/
+        
         [HttpPut("{id}")]
         public async Task<ActionResult<Category>> EditCategory(int id, [FromForm] string name, IFormFile? image)
         {

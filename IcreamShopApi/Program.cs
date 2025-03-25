@@ -23,7 +23,6 @@ builder.Services.AddScoped<OrderDetailRepository>();
 
 
 
-
 // C?u hình Authentication s? d?ng JWT Bearer
 builder.Services.AddAuthentication(options =>
 {
