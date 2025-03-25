@@ -4,16 +4,85 @@
     ViewData["Title"] = "User Profile";
 }
 
+<style>
+    /* PROFILE PAGE CUSTOM STYLING */
+    .profile-card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        padding: 30px;
+    }
+
+    .profile-card h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .profile-card label {
+        font-weight: 500;
+        color: #555;
+    }
+
+    .profile-card input {
+        border-radius: 8px;
+        height: 42px;
+        font-size: 15px;
+    }
+
+    .profile-card .btn-primary {
+        background: linear-gradient(to right, #0d6efd, #0aa2c0);
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    .profile-card .btn-primary:hover {
+        background: linear-gradient(to right, #0aa2c0, #0d6efd);
+    }
+</style>
 
 <div class="container mt-4">
-    <h2>User Profile</h2>
-    <hr />
+    <div class="profile-card">
+        <h2>User Profile</h2>
+        <hr />
 
-    <div class="card p-4">
-        <h4>👤 @Model.UserInfo.FullName</h4>
-        <p><strong>Email:</strong> @Model.UserInfo.Email</p>
-        <p><strong>Phone:</strong> @Model.UserInfo.PhoneNumber</p>
-        <p><strong>Address:</strong> @Model.UserInfo.Address</p>
-        <p><strong>Role:</strong> @Model.UserInfo.Role</p>
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input asp-for="UserInfo.FullName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input asp-for="UserInfo.Email" class="form-control" readonly />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input asp-for="UserInfo.PhoneNumber" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <input asp-for="UserInfo.Address" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-2">Save Changes</button>
+        </form>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                Swal.fire({
+                    icon: 'success',
+                    title: '@TempData["SuccessMessage"]',
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            </text>
+        }
+    </script>
+}
