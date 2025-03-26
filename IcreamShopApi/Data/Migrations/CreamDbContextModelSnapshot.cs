@@ -168,7 +168,11 @@ namespace IcreamShopApi.Data.Migrations
                         {
                             IceCreamId = 1,
                             CategoryId = 1,
+
                             CreatedAt = new DateTime(2025, 3, 25, 16, 21, 20, 370, DateTimeKind.Local).AddTicks(8933),
+
+                            CreatedAt = new DateTime(2025, 3, 23, 18, 59, 25, 448, DateTimeKind.Local).AddTicks(6607),
+
                             Description = "kem xin",
                             ImageUrl = "choco.jpg",
                             Name = "Chocolate Ice Cream",
@@ -297,7 +301,6 @@ namespace IcreamShopApi.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")

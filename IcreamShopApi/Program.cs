@@ -52,6 +52,10 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; 
 });
 
+
+
+// C?u hình Authentication s? d?ng JWT Bearer
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -80,9 +84,13 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigins", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("https://localhost:7068") 
+
+
+
+        policy.WithOrigins("https://localhost:7068")  // Thay thế bằng URL frontend của bạn
+
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -120,7 +128,7 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Sử dụng CORS với policy đã cấu hình
-app.UseCors("AllowSpecificOrigins");
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -130,6 +138,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
 
 app.UseAuthentication();
 

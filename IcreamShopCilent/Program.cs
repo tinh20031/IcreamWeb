@@ -14,7 +14,11 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Cấu hình Authentication (Facebook, Google) và Cookie Authentication
+
+
+
+// Cấu hình Authentication (Facebook và Google) và Cookie Authentication
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
