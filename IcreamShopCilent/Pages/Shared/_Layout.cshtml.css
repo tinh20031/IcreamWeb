@@ -46,3 +46,72 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+custom-dropdown {
+    width: auto;
+    min-width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    animation: fadeIn 0.2s ease-in-out;
+    transform: translateX(-10px); /* tuỳ chỉnh nếu bị lệch */
+}
+
+/* Màu nền navbar */
+.ice-cream-nav {
+    background-color: #FFB98E !important;
+    padding: 10px 0;
+}
+
+/* Nút dropdown tên người dùng */
+.user-toggle {
+    background-color: #f28e66;
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: white !important;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 220px; /* 👉 đây là độ rộng của nút tên người dùng */
+    text-align: center;
+}
+
+    .user-toggle:hover {
+        background-color: #e47d52;
+        color: white;
+    }
+
+/* Menu đổ xuống */
+.dropdown-menu {
+    min-width: 180px;
+    font-size: 15px;
+}
+
+/* Item trong dropdown */
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #e47d52;
+    font-weight: 500;
+}
+/* Làm menu dropdown mềm mại, bo tròn, đổ bóng */
+.dropdown-menu {
+    min-width: 180px;
+    font-size: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    border: none;
+    margin-top: 10px;
+}
+
+    /* Mỗi item trong menu */
+    .dropdown-menu .dropdown-item {
+        padding: 10px 20px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+        /* Hover item */
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #ffe2d4;
+            color: #d85525;
+            font-weight: 500;
+            border-radius: 8px;
+        }
