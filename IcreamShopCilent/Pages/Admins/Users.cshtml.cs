@@ -11,7 +11,7 @@ namespace IcreamShopCilent.Pages.Admins
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public List<User> Users { get; set; } = new List<User>();
+        public List<IcreamShopApi.Models.User> Users { get; set; } = new List<IcreamShopApi.Models.User>();
 
         public UsersModel(IHttpClientFactory httpClientFactory)
         {
@@ -29,7 +29,7 @@ namespace IcreamShopCilent.Pages.Admins
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                Users = JsonSerializer.Deserialize<List<User>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                Users = JsonSerializer.Deserialize<List<IcreamShopApi.Models.User>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
             }
         }
     }

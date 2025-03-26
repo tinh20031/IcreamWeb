@@ -12,6 +12,7 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+    options.Cookie.SameSite = SameSiteMode.Lax;
 });
 
 
@@ -26,8 +27,11 @@ builder.Services.AddAuthentication(options =>
 })
 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
 {
-    options.LoginPath = "/Login";
-    options.LogoutPath = "/Logout";
+    /*  options.LoginPath = "/Login";
+      options.LogoutPath = "/Logout";*/
+    options.LoginPath = "/Auth/Login";
+    options.LogoutPath = "/Auth/Login?handler=Logout";
+    options.AccessDeniedPath = "/Auth/Login";
 })
 .AddFacebook(options =>
 {

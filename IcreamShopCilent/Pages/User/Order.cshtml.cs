@@ -20,6 +20,7 @@ namespace IcreamShopCilent.Pages.User
             CurrentUserId = HttpContext.Session.GetInt32("UserId") ?? 0;
             _logger.LogInformation("CurrentUserId retrieved from session: {CurrentUserId}", CurrentUserId);
 
+
             if (CurrentUserId == 0)
             {
                 _logger.LogWarning("UserId not found in session. Redirecting to login.");

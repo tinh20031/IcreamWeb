@@ -21,19 +21,20 @@ namespace IcreamShopCilent.Pages.User
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            // Lấy UserId từ session
             CurrentUserId = HttpContext.Session.GetInt32("UserId") ?? 0;
+            var token = HttpContext.Session.GetString("JWToken");
+            Console.WriteLine($"CartModel - UserId: {CurrentUserId}, JWToken: {token}");
 
-            if (CurrentUserId == 0)
+            if (CurrentUserId == 0 || string.IsNullOrEmpty(token))
             {
-                CartItems = new List<CartDTO>();
-                return;
+                TempData["Error"] = "Vui lòng đăng nhập để xem giỏ hàng.";
+                return RedirectToPage("/Auth/Login");
             }
 
-            // Gọi API để lấy danh sách giỏ hàng
             var client = _httpClientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
             var response = await client.GetAsync($"https://localhost:7283/api/CartApi/user/{CurrentUserId}");
 
             if (response.IsSuccessStatusCode)
@@ -45,6 +46,7 @@ namespace IcreamShopCilent.Pages.User
             {
                 CartItems = new List<CartDTO>();
             }
+            return Page();
         }
     }
 }

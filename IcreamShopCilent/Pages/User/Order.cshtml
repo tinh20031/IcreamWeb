@@ -114,16 +114,18 @@
         console.log("UserId in OrderHistory:", userId);
 
         // Function to check if the token is expired
-        function isTokenExpired(token) {
-            try {
-                const payload = JSON.parse(atob(token.split('.')[1]));
-                const exp = payload.exp * 1000; // Convert to milliseconds
-                return Date.now() > exp;
-            } catch (error) {
-                console.error("Error decoding token:", error);
-                return true; // Assume expired if decoding fails
-            }
-        }
+       function isTokenExpired(token) {
+    try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        const exp = payload.exp * 1000;
+        const isExpired = Date.now() > exp;
+        console.log("Token expiration check:", { exp, now: Date.now(), isExpired });
+        return isExpired;
+    } catch (error) {
+        console.error("Error decoding token:", error);
+        return true;
+    }
+}
 
         // Load danh sách đơn hàng khi trang được tải
         window.onload = function () {

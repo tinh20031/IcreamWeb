@@ -21,8 +21,34 @@ namespace IcreamShopCilent.Pages.User
         [BindProperty]
         public UserModel UserInfo { get; set; }
 
+        /*public async Task<IActionResult> OnGetAsync(int id)
+        {
+            var response = await _httpClient.GetAsync($"https://localhost:7283/api/UserApi/{id}");
+            if (!response.IsSuccessStatusCode) return NotFound();
+
+            var userJson = await response.Content.ReadAsStringAsync();
+            UserInfo = JsonSerializer.Deserialize<UserModel>(userJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            return Page();
+        }*/
         public async Task<IActionResult> OnGetAsync(int id)
         {
+            var currentUserId = HttpContext.Session.GetInt32("UserId") ?? 0;
+            var token = HttpContext.Session.GetString("JWToken");
+
+            if (currentUserId == 0 || string.IsNullOrEmpty(token))
+            {
+                TempData["Error"] = "Vui lòng đăng nhập để xem thông tin cá nhân.";
+                return RedirectToPage("/Auth/Login");
+            }
+
+            if (currentUserId != id)
+            {
+                TempData["Error"] = "Bạn không có quyền xem thông tin của người dùng này.";
+                return RedirectToPage("/User/Index");
+            }
+
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
             var response = await _httpClient.GetAsync($"https://localhost:7283/api/UserApi/{id}");
             if (!response.IsSuccessStatusCode) return NotFound();
 

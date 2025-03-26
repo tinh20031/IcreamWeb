@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using IcreamShopCilent.Services;
+using System.Text.Json;
 
 namespace IcreamShopCilent.Pages.Auth
 {
@@ -52,35 +53,30 @@ namespace IcreamShopCilent.Pages.Auth
                 HttpContext.Session.SetString("JWToken", token);
                 HttpContext.Session.SetString("Role", role);
                 HttpContext.Session.SetString("Email", LoginDto.Email);
-                HttpContext.Session.SetInt32("UserId", userId); // Lưu UserId vào session
+                HttpContext.Session.SetInt32("UserId", userId);
+                Console.WriteLine($"After setting session - UserId: {userId}, Retrieved UserId: {HttpContext.Session.GetInt32("UserId")}");
 
-                // Gọi API lấy thông tin user sau khi đăng nhập
+                // Gọi API lấy thông tin user
                 var userResponse = await _httpClient.GetAsync($"https://localhost:7283/api/UserApi?email={LoginDto.Email}");
-
                 if (userResponse.IsSuccessStatusCode)
                 {
                     var userJson = await userResponse.Content.ReadAsStringAsync();
                     var userList = JsonSerializer.Deserialize<List<AuthResponseDto>>(userJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-                    // Tìm user theo email đăng nhập
                     var userInfo = userList?.FirstOrDefault(u => u.Email == LoginDto.Email);
 
                     if (userInfo != null)
                     {
-                        HttpContext.Session.SetString("UserId", userInfo.UserId.ToString()); // Lưu UserId vào Session
+                        //HttpContext.Session.SetString("UserId", userInfo.UserId.ToString());
                         HttpContext.Session.SetString("FullName", userInfo.FullName);
+                        Console.WriteLine($"After setting userInfo - UserId (string): {userInfo.UserId}, Retrieved UserId (int): {HttpContext.Session.GetInt32("UserId")}");
                     }
-
-
                 }
 
                 if (string.Equals(role, "admin", StringComparison.OrdinalIgnoreCase))
                     return RedirectToPage("/Admins/DashboardModel");
 
                 return RedirectToPage("/User/Index");
-
             }
-
 
             ModelState.AddModelError("", "Email or password is incorrect");
             return Page();
