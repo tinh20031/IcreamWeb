@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Text;
-using System.Text.Json;
 using IcreamShopCilent.Services;
 
 namespace IcreamShopCilent.Pages.Auth
@@ -25,34 +23,36 @@ namespace IcreamShopCilent.Pages.Auth
         {
             // Thực hiện khi người dùng truy cập vào trang login
         }
+
         // Handler cho việc đăng nhập qua Facebook
         public IActionResult OnGetFacebookLogin()
         {
-            return Challenge(new AuthenticationProperties { RedirectUri = "/Index" }, FacebookDefaults.AuthenticationScheme);
+            return Challenge(new AuthenticationProperties { RedirectUri = "/User/Index" }, FacebookDefaults.AuthenticationScheme);
         }
 
         // Handler cho việc đăng nhập qua Google
         public IActionResult OnGetGoogleLogin()
         {
-            return Challenge(new AuthenticationProperties { RedirectUri = "/Index" }, GoogleDefaults.AuthenticationScheme);
+            return Challenge(new AuthenticationProperties { RedirectUri = "/User/Index" }, GoogleDefaults.AuthenticationScheme);
         }
 
-        //login with email and password
-
+        // Đăng nhập bằng email và mật khẩu
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
                 return Page();
 
             var authService = new AuthService(_httpClient);
-            var (token, role) = await authService.LoginAsync(LoginDto.Email, LoginDto.Password);
+            var (token, role, userId) = await authService.LoginAsync(LoginDto.Email, LoginDto.Password);
 
-            Console.WriteLine($"Login attempt - Token: {token}, Role: {role}");
+            Console.WriteLine($"Login attempt - Token: {token}, Role: {role}, UserId: {userId}");
 
             if (token != null)
             {
                 HttpContext.Session.SetString("JWToken", token);
                 HttpContext.Session.SetString("Role", role);
+                HttpContext.Session.SetString("Email", LoginDto.Email);
+                HttpContext.Session.SetInt32("UserId", userId); // Lưu UserId vào session
 
                 // Gọi API lấy thông tin user sau khi đăng nhập
                 var userResponse = await _httpClient.GetAsync($"https://localhost:7283/api/UserApi?email={LoginDto.Email}");
@@ -77,7 +77,8 @@ namespace IcreamShopCilent.Pages.Auth
                 if (string.Equals(role, "admin", StringComparison.OrdinalIgnoreCase))
                     return RedirectToPage("/Admins/DashboardModel");
 
-                return RedirectToPage("/Index");
+                return RedirectToPage("/User/Index");
+
             }
 
 

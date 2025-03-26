@@ -1,0 +1,285 @@
+﻿@page
+@model IcreamShopCilent.Pages.User.OrderModel
+@{
+    ViewData["Title"] = "Lịch sử đơn hàng";
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <style>
+        .order-history-container {
+            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0, #ffe6f2, #e6f7ff);
+            min-height: 100vh;
+        }
+
+        .order-table {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+            .order-table th, .order-table td {
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .order-table th {
+                background: linear-gradient(45deg, #ff6f91, #ffcc70);
+                color: white;
+                font-weight: bold;
+            }
+
+            .order-table img {
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+        .btn-action {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn-action:hover {
+                transform: scale(1.05);
+            }
+
+        .icecream-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        .alert {
+            border-radius: 10px;
+        }
+
+        .order-details {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            display: none; /* Ẩn chi tiết đơn hàng mặc định */
+        }
+
+        .order-details-table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+            .order-details-table th, .order-details-table td {
+                padding: 5px;
+                text-align: center;
+            }
+
+            .order-details-table th {
+                background: #ffcc70;
+                color: white;
+            }
+    </style>
+}
+
+<div class="order-history-container">
+    <h2 class="text-center mb-4" style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #ff6f91;">Lịch sử đơn hàng <span class="icecream-emoji">📜</span></h2>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger" id="errorAlert">@TempData["Error"]</div>
+        <script>
+            if ('@TempData["Error"]'.includes("Phiên đăng nhập đã hết hạn")) {
+                setTimeout(() => {
+                    window.location.href = "/Auth/Login";
+                }, 2000); // Chuyển hướng sau 2 giây để người dùng đọc thông báo
+            }
+        </script>
+    }
+
+    <div id="orderList">
+        <!-- Danh sách đơn hàng sẽ được hiển thị ở đây -->
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const userId = @Model.CurrentUserId;
+        const token = '@HttpContext.Session.GetString("JWToken")';
+        console.log("Token in OrderHistory:", token);
+        console.log("UserId in OrderHistory:", userId);
+
+        // Function to check if the token is expired
+        function isTokenExpired(token) {
+            try {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                const exp = payload.exp * 1000; // Convert to milliseconds
+                return Date.now() > exp;
+            } catch (error) {
+                console.error("Error decoding token:", error);
+                return true; // Assume expired if decoding fails
+            }
+        }
+
+        // Load danh sách đơn hàng khi trang được tải
+        window.onload = function () {
+            loadOrders();
+        };
+
+        // Lấy danh sách đơn hàng của người dùng
+        async function loadOrders() {
+            if (!userId || userId === 0 || !token) {
+                alert("Vui lòng đăng nhập để xem lịch sử đơn hàng!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            // Check if token is expired
+            if (isTokenExpired(token)) {
+                alert("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://localhost:7283/api/OrderApi/user/${userId}`, {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "include" // Include credentials for CORS
+                });
+
+                if (!response.ok) {
+                    if (response.status === 401) {
+                        alert("Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại!");
+                        window.location.href = "/Auth/Login";
+                        return;
+                    }
+                    if (response.status === 404) {
+                        document.getElementById("orderList").innerHTML = `
+                                            <div class="text-center">
+                                                <p style="color: #555;">Bạn chưa có đơn hàng nào! Hãy đặt hàng ngay nhé 🍦</p>
+                                                <a href="/User/Index" class="btn btn-action">Mua sắm ngay</a>
+                                            </div>`;
+                        return;
+                    }
+                    throw new Error("Không thể tải danh sách đơn hàng.");
+                }
+
+                const orders = await response.json();
+                displayOrders(orders);
+            } catch (error) {
+                console.error("Lỗi khi lấy danh sách đơn hàng:", error);
+                alert("Đã xảy ra lỗi khi tải danh sách đơn hàng: " + error.message);
+            }
+        }
+
+        // Hiển thị danh sách đơn hàng
+        function displayOrders(orders) {
+            console.log("Displaying orders:", orders);
+            const orderList = document.getElementById("orderList");
+            if (!orderList) {
+                console.error("orderList element not found!");
+                return;
+            }
+
+            if (!orders || orders.length === 0) {
+                console.log("No orders to display. Showing 'no orders' message...");
+                orderList.innerHTML = `
+                            <div class="text-center">
+                                <p style="color: #555;">Bạn chưa có đơn hàng nào! Hãy đặt hàng ngay nhé 🍦</p>
+                                <a href="/User/Index" class="btn btn-action">Mua sắm ngay</a>
+                            </div>`;
+                return;
+            }
+
+            let html = `
+                        <table class="table order-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+
+            orders.forEach(order => {
+                console.log("Processing order:", order);
+                html += `
+                            <tr>
+                                <td>#${order.orderId}</td>
+                                <td>$${order.totalPrice.toFixed(2)}</td>
+                                <td>${order.status}</td>
+                                <td>${new Date(order.orderDate).toLocaleDateString()}</td>
+                                <td>
+                                    <button class="btn btn-action" onclick="toggleOrderDetails(${order.orderId})">Xem chi tiết</button>
+                                    <div id="orderDetails_${order.orderId}" class="order-details">
+                                        <h5>Chi tiết đơn hàng</h5>
+                                        <p><strong>Địa chỉ giao hàng:</strong> ${order.shippingAddress}</p>
+                                        <table class="order-details-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Hình ảnh</th>
+                                                    <th>Tên kem</th>
+                                                    <th>Số lượng</th>
+                                                    <th>Giá</th>
+                                                    <th>Tổng</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>`;
+
+                if (order.orderDetails && order.orderDetails.length > 0) {
+                    order.orderDetails.forEach(detail => {
+                        console.log("Processing order detail:", detail);
+                        html += `
+                                    <tr>
+                                        <td><img src="${detail.imageUrl}" alt="${detail.iceCreamName}" onerror="this.src='https://example.com/default.jpg'" /></td>
+                                        <td>${detail.iceCreamName}</td>
+                                        <td>${detail.quantity}</td>
+                                        <td>$${detail.price.toFixed(2)}</td>
+                                        <td>$${(detail.price * detail.quantity).toFixed(2)}</td>
+                                    </tr>`;
+                    });
+                } else {
+                    console.log("No order details for order:", order.orderId);
+                    html += `
+                                <tr>
+                                    <td colspan="5">Không có chi tiết đơn hàng.</td>
+                                </tr>`;
+                }
+
+                html += `
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>`;
+            });
+
+            html += `
+                            </tbody>
+                        </table>`;
+            orderList.innerHTML = html;
+            console.log("Orders displayed successfully.");
+        }
+
+        // Toggle hiển thị chi tiết đơn hàng
+        function toggleOrderDetails(orderId) {
+            const detailsDiv = document.getElementById(`orderDetails_${orderId}`);
+            if (detailsDiv.style.display === "none" || detailsDiv.style.display === "") {
+                detailsDiv.style.display = "block";
+            } else {
+                detailsDiv.style.display = "none";
+            }
+        }
+    </script>
+}

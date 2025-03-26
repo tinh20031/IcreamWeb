@@ -1,4 +1,5 @@
-﻿using IcreamShopApi.Data;
+﻿using IcreamShopApi;
+using IcreamShopApi.Data;
 using IcreamShopApi.Models;
 using IcreamShopApi.Repository;
 using IcreamShopApi.Services;
@@ -15,8 +16,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // C?u hình d?ch v? cho Razor Pages và API
 builder.Services.AddRazorPages();
+builder.Services.AddHttpClient();
 builder.Services.AddControllers();
-builder.Services.AddScoped<CartRepository>();
+builder.Services.Configure<VNPAYConfig>(builder.Configuration.GetSection("VNPAY")); builder.Services.AddScoped<CartRepository>();
 builder.Services.AddScoped<OrderRepository>();
 builder.Services.AddScoped<OrderDetailRepository>();
 builder.Services.AddScoped<CartService>();
@@ -42,7 +44,17 @@ IEdmModel GetEdmModel()
     return builder.GetEdmModel();
 }
 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); 
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true; 
+});
 
+
+
+// C?u hình Authentication s? d?ng JWT Bearer
 
 builder.Services.AddAuthentication(options =>
 {
@@ -72,15 +84,22 @@ builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigins", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("https://localhost:7068") 
+
+
+
+        policy.WithOrigins("https://localhost:7068")  // Thay thế bằng URL frontend của bạn
+
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
 builder.Services.AddControllers();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -98,6 +117,8 @@ builder.Services.AddScoped<OrderDetailRepository>();
 builder.Services.AddScoped<OrderDetailService>();
 builder.Services.AddScoped<ReviewRepository>();
 builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<AddressRepository>();
+builder.Services.AddScoped<AddressService>();
 builder.Services.AddSwaggerGen(c =>
 {
     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
@@ -107,7 +128,7 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Sử dụng CORS với policy đã cấu hình
-app.UseCors("AllowSpecificOrigins");
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -118,10 +139,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseAuthentication();
 
+app.UseCors("AllowSpecificOrigins");    
 app.UseAuthorization();
-
+app.UseSession();
 app.MapControllers();
 
 app.Run();

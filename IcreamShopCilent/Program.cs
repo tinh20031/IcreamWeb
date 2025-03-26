@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using IcreamShopCilent.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Thêm dịch vụ Session
 builder.Services.AddDistributedMemoryCache();
+
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -12,7 +14,11 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// Cấu hình Authentication (Facebook, Google) và Cookie Authentication
+
+
+
+// Cấu hình Authentication (Facebook và Google) và Cookie Authentication
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -45,6 +51,7 @@ builder.Services.AddAuthorization();
 
 // Thêm Razor Pages, HttpClient và CORS
 builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddCors(options =>
 {
@@ -52,7 +59,9 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins("https://localhost:7068")
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+        .AllowCredentials();
+
     });
 });
 
@@ -76,14 +85,9 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Ánh xạ trang mặc định khi truy cập "/"
-app.MapFallbackToPage("/User/Index");
 
 // Ánh xạ Razor Pages
 app.MapRazorPages();
-app.MapGet("/", async (context) =>
-{
-    context.Response.Redirect("/User/Index");
-});
+
 
 app.Run();

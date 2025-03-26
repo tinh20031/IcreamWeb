@@ -1,0 +1,297 @@
+﻿@page
+@model IcreamShopCilent.Pages.Admins.IceCreamsModel
+@{
+    ViewData["Title"] = "Quản Lý IceCream";
+}
+
+<h2>Quản Lý IceCream</h2>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addIceCreamModal">
+    Thêm IceCream Mới
+</button>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Mô tả</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Ảnh</th>
+            <th>Danh mục</th>
+            <th>Ngày tạo</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var iceCream in Model.IceCreams)
+        {
+            <tr>
+                <td>@iceCream.IceCreamId</td>
+                <td>@iceCream.Name</td>
+                <td>@iceCream.Description</td>
+                <td>@iceCream.Price</td>
+                <td>@iceCream.Stock</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(iceCream.ImageUrl))
+                    {
+                        <img src="@iceCream.ImageUrl" alt="@iceCream.Name" style="max-width: 100px;" />
+                    }
+                    else
+                    {
+                        <span>Không có ảnh</span>
+                    }
+                </td>
+                <td>
+                    @(Model.Categories.FirstOrDefault(c => c.CategoryId == iceCream.CategoryId)?.Name ?? iceCream.CategoryId.ToString())
+                </td>
+                <td>@iceCream.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="openEditModal(@iceCream.IceCreamId)">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteIceCream(@iceCream.IceCreamId)">Xóa</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal Thêm IceCream -->
+<div class="modal fade" id="addIceCreamModal" tabindex="-1" aria-labelledby="addIceCreamModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addIceCreamModalLabel">Thêm IceCream Mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addIceCreamForm">
+                    <div class="mb-3">
+                        <label class="form-label">Tên IceCream</label>
+                        <input type="text" class="form-control" id="addName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mô tả</label>
+                        <input type="text" class="form-control" id="addDescription">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giá</label>
+                        <input type="number" class="form-control" id="addPrice" min="0.01" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số lượng kho</label>
+                        <input type="number" class="form-control" id="addStock" min="0" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">URL Ảnh</label>
+                        <input type="text" class="form-control" id="addImageUrl">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Danh mục</label>
+                        <select class="form-control" id="addCategoryId" required>
+                            <option value="">Chọn danh mục</option>
+                            @foreach (var category in Model.Categories)
+                            {
+                                <option value="@category.CategoryId">@category.Name</option>
+                            }
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="addIceCream()">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Sửa IceCream -->
+<div class="modal fade" id="editIceCreamModal" tabindex="-1" aria-labelledby="editIceCreamModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editIceCreamModalLabel">Sửa Thông Tin IceCream</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editIceCreamForm">
+                    <input type="hidden" id="editIceCreamId">
+                    <div class="mb-3">
+                        <label class="form-label">Tên IceCream</label>
+                        <input type="text" class="form-control" id="editName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mô tả</label>
+                        <input type="text" class="form-control" id="editDescription">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Giá</label>
+                        <input type="number" class="form-control" id="editPrice" min="0.01" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số lượng kho</label>
+                        <input type="number" class="form-control" id="editStock" min="0" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">URL Ảnh</label>
+                        <input type="text" class="form-control" id="editImageUrl">
+                        <img id="currentImage" src="" alt="Ảnh hiện tại" style="max-width: 100px; margin-top: 10px;" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Danh mục</label>
+                        <select class="form-control" id="editCategoryId" required>
+                            <option value="">Chọn danh mục</option>
+                            @foreach (var category in Model.Categories)
+                            {
+                                <option value="@category.CategoryId">@category.Name</option>
+                            }
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="editIceCream()">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const apiUrl = "https://localhost:7283/api/IceCreamApi";
+        const token = "@HttpContext.Session.GetString("JwtToken")";
+
+        async function loadIceCreams() {
+            try {
+                const response = await fetch(apiUrl, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to load ice creams');
+                window.location.reload();
+            } catch (error) {
+                console.error('Error loading ice creams:', error);
+                alert('Không thể tải danh sách IceCream');
+            }
+        }
+
+        async function addIceCream() {
+            const iceCream = {
+                name: document.getElementById("addName").value,
+                description: document.getElementById("addDescription").value,
+                price: parseFloat(document.getElementById("addPrice").value),
+                stock: parseInt(document.getElementById("addStock").value),
+                imageUrl: document.getElementById("addImageUrl").value,
+                categoryId: parseInt(document.getElementById("addCategoryId").value),
+                createdAt: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(iceCream)
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Thêm thất bại: ${errorText}`);
+                }
+
+                $("#addIceCreamModal").modal("hide");
+                await loadIceCreams();
+            } catch (error) {
+                console.error('Error adding ice cream:', error);
+                alert('Lỗi khi thêm IceCream: ' + error.message);
+            }
+        }
+
+        async function openEditModal(id) {
+            try {
+                const response = await fetch(`${apiUrl}/${id}`, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const iceCream = await response.json();
+
+                document.getElementById("editIceCreamId").value = iceCream.iceCreamId || '';
+                document.getElementById("editName").value = iceCream.name || '';
+                document.getElementById("editDescription").value = iceCream.description || '';
+                document.getElementById("editPrice").value = iceCream.price || '';
+                document.getElementById("editStock").value = iceCream.stock || '';
+                document.getElementById("editImageUrl").value = iceCream.imageUrl || '';
+                document.getElementById("currentImage").src = iceCream.imageUrl || '';
+                document.getElementById("editCategoryId").value = iceCream.categoryId || '';
+
+                $("#editIceCreamModal").modal("show");
+            } catch (error) {
+                console.error('Error opening edit modal:', error);
+                alert('Không thể lấy thông tin IceCream: ' + error.message);
+            }
+        }
+
+        async function editIceCream() {
+            const iceCream = {
+                iceCreamId: parseInt(document.getElementById("editIceCreamId").value),
+                name: document.getElementById("editName").value,
+                description: document.getElementById("editDescription").value,
+                price: parseFloat(document.getElementById("editPrice").value),
+                stock: parseInt(document.getElementById("editStock").value),
+                imageUrl: document.getElementById("editImageUrl").value,
+                categoryId: parseInt(document.getElementById("editCategoryId").value),
+                createdAt: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(`${apiUrl}/${iceCream.iceCreamId}`, {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(iceCream)
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Cập nhật thất bại: ${errorText}`);
+                }
+
+                $("#editIceCreamModal").modal("hide");
+                await loadIceCreams();
+            } catch (error) {
+                console.error('Error editing ice cream:', error);
+                alert('Lỗi khi cập nhật IceCream: ' + error.message);
+            }
+        }
+
+        async function deleteIceCream(id) {
+            if (confirm("Bạn có chắc chắn muốn xóa IceCream này không?")) {
+                try {
+                    const response = await fetch(`${apiUrl}/${id}`, {
+                        method: "DELETE",
+                        headers: {
+                            "Authorization": `Bearer ${token}`,
+                            "Content-Type": "application/json"
+                        }
+                    });
+                    if (!response.ok) throw new Error('Xóa thất bại');
+                    await loadIceCreams();
+                } catch (error) {
+                    console.error('Error deleting ice cream:', error);
+                    alert('Lỗi khi xóa IceCream: ' + error.message);
+                }
+            }
+        }
+    </script>
+}

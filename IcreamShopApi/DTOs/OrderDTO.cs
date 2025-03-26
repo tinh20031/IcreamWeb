@@ -6,7 +6,8 @@
 		public decimal TotalPrice { get; set; }
 		public string Status { get; set; }
 		public DateTime OrderDate { get; set; }
-		public List<OrderDetailDTO> OrderDetails { get; set; }
+        public string ShippingAddress { get; set; }
+        public List<OrderDetailDTO> OrderDetails { get; set; }
 	}
 
 	public class OrderDetailDTO
