@@ -1,4 +1,6 @@
-﻿using IcreamShopApi.Data;
+﻿using IcreamShopApi;
+using IcreamShopApi.Data;
+using IcreamShopApi.Models;
 using IcreamShopApi.Repository;
 using IcreamShopApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -6,24 +8,54 @@ using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OData.Edm;
+using Microsoft.OData.ModelBuilder;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // C?u hình d?ch v? cho Razor Pages và API
 builder.Services.AddRazorPages();
+builder.Services.AddHttpClient();
 builder.Services.AddControllers();
-builder.Services.AddScoped<CartRepository>();
+builder.Services.Configure<VNPAYConfig>(builder.Configuration.GetSection("VNPAY")); builder.Services.AddScoped<CartRepository>();
 builder.Services.AddScoped<OrderRepository>();
 builder.Services.AddScoped<OrderDetailRepository>();
 builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<OrderDetailService>();
 builder.Services.AddScoped<OrderDetailRepository>();
+builder.Services.AddControllers().AddOData(opt => opt
+    .AddRouteComponents("odata", GetEdmModel())
+    .Filter()     
+    .Select()      
+    .Expand()   
+    .OrderBy()      
+    .Count()       
+    .SetMaxTop(100) 
+);
+
+
+IEdmModel GetEdmModel()
+{
+    var builder = new ODataConventionModelBuilder();
+    builder.EntitySet<IceCream>("IceCreams"); 
+    builder.EntitySet<Category>("Categories"); 
+    return builder.GetEdmModel();
+}
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); 
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true; 
+});
 
 
 
 // C?u hình Authentication s? d?ng JWT Bearer
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -43,19 +75,22 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-//DB
+
 builder.Services.AddDbContext<CreamDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Thêm UserService cho các yêu c?u ??ng ký và ??ng nh?p
+
 builder.Services.AddScoped<IUserService, UserService>();
 
-// Cấu hình CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
+
+
+
         policy.WithOrigins("https://localhost:7068")  // Thay thế bằng URL frontend của bạn
+
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -63,6 +98,8 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -80,6 +117,12 @@ builder.Services.AddScoped<OrderDetailRepository>();
 builder.Services.AddScoped<OrderDetailService>();
 builder.Services.AddScoped<ReviewRepository>();
 builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<AddressRepository>();
+builder.Services.AddScoped<AddressService>();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+});
 
 
 var app = builder.Build();
@@ -100,8 +143,9 @@ app.UseStaticFiles();
 
 app.UseAuthentication();
 
+app.UseCors("AllowSpecificOrigins");    
 app.UseAuthorization();
-
+app.UseSession();
 app.MapControllers();
 
 app.Run();

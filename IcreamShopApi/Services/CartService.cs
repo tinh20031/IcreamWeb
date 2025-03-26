@@ -58,20 +58,43 @@ namespace IcreamShopApi.Services
             var existingCart = await _cartRepository.GetCartById(cart.CartId);
             if (existingCart == null)
             {
-                throw new Exception("Khong tim thay Cart");
+                throw new Exception($"Không tìm thấy giỏ hàng với ID {cart.CartId}.");
             }
-            await _cartRepository.EditCart(cart);
+
+            // Cập nhật các thuộc tính
+            existingCart.UserId = cart.UserId;
+            existingCart.IceCreamId = cart.IceCreamId;
+            existingCart.Quantity = cart.Quantity;
+            existingCart.CreatedAt = cart.CreatedAt;
+
+            await _cartRepository.EditCart(existingCart);
         }
 
 
-		public async Task<List<CartDTO>> GetCartsByUserIdAsync(int userId)
-		{
-			var carts = await _cartRepository.GetCartsByUserId(userId);
-			if (carts == null || !carts.Any())
-			{
-				throw new Exception($"No carts found for user with ID {userId}");
-			}
-			return carts;
-		}
-	} 
+        public async Task<List<CartDTO>> GetCartsByUserIdAsync(int userId)
+        {
+            var carts = await _context.Carts
+                .Include(c => c.IceCream)
+                .Where(c => c.UserId == userId)
+                .Select(c => new CartDTO
+                {
+                    CartId = c.CartId,
+                    UserId = c.UserId,
+                    IceCreamId = c.IceCreamId,
+                    Quantity = c.Quantity,
+                    CreatedAt = c.CreatedAt,
+                    IceCreamName = c.IceCream.Name,
+                    Image = c.IceCream.ImageUrl,
+                    Price = c.IceCream.Price
+                })
+                .ToListAsync();
+
+            if (carts == null || !carts.Any())
+            {
+                throw new Exception($"Không tìm thấy giỏ hàng cho người dùng với ID {userId}");
+            }
+
+            return carts;
+        }
+    } 
 }

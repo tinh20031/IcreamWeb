@@ -1,0 +1,28 @@
+﻿@page
+@model IcreamShopClient.Pages.User.VnpayReturnModel
+@{
+    ViewData["Title"] = "Kết quả thanh toán";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Kết quả thanh toán</h2>
+    @if (TempData["PaymentMessage"] != null)
+    {
+        <div class="alert @(Model.VnpayResponse.Success ? "alert-success" : "alert-danger")">
+            @TempData["PaymentMessage"]
+        </div>
+    }
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Chi tiết thanh toán</h5>
+            <p><strong>Mã đơn hàng:</strong> @Model.VnpayResponse.OrderId</p>
+            <p><strong>Mã giao dịch:</strong> @Model.VnpayResponse.TransactionId</p>
+            <p><strong>Thông tin đơn hàng:</strong> @Model.VnpayResponse.OrderDescription</p>
+            <p><strong>Trạng thái:</strong> @(Model.VnpayResponse.Success ? "Thành công" : "Thất bại")</p>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="/User/Cart" class="btn btn-primary">Quay lại giỏ hàng</a>
+    </div>
+</div>

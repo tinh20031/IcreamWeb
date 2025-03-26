@@ -14,7 +14,7 @@ namespace IcreamShopCilent.Services
             _httpClient.BaseAddress = new Uri("https://localhost:7283/");
         }
 
-        public async Task<string> RegisterAsnync(string fullName, string email, string password, string phoneNumber, string address)
+        public async Task<string> RegisterAsync(string fullName, string email, string password, string phoneNumber, string address)
         {
             var payload = new { name = fullName, Email = email, Password = password, MobilePhone = phoneNumber, StreetAddress = address };
             var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
@@ -23,7 +23,7 @@ namespace IcreamShopCilent.Services
             return await response.Content.ReadAsStringAsync();
         }
 
-        public async Task<(string Token, string Role)> LoginAsync(string email, string password)
+        public async Task<(string Token, string Role, int UserId)> LoginAsync(string email, string password)
         {
             var payload = new { Email = email, Password = password };
             var content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
@@ -42,17 +42,17 @@ namespace IcreamShopCilent.Services
                         PropertyNameCaseInsensitive = true // Bỏ qua phân biệt hoa/thường
                     };
                     var authResponse = JsonSerializer.Deserialize<AuthResponseDto>(responseContent, options);
-                    Console.WriteLine($"Deserialized - Token: {authResponse.Token}, Role: {authResponse.Role}");
-                    return (authResponse.Token, authResponse.Role);
+                    Console.WriteLine($"Deserialized - Token: {authResponse.Token}, Role: {authResponse.Role}, UserId: {authResponse.UserId}");
+                    return (authResponse.Token, authResponse.Role, authResponse.UserId);
                 }
                 catch (JsonException ex)
                 {
                     Console.WriteLine($"Deserialize error: {ex.Message}");
-                    return (null, null);
+                    return (null, null, 0);
                 }
             }
             Console.WriteLine($"Login failed with status: {response.StatusCode}");
-            return (null, null);
+            return (null, null, 0);
         }
     }
 }
