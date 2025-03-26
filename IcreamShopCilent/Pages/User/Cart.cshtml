@@ -1,0 +1,325 @@
+﻿@page
+@model IcreamShopCilent.Pages.User.CartModel
+@{
+    ViewData["Title"] = "Giỏ hàng";
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <style>
+        /* Style cho trang Cart */
+        .cart-container {
+            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0, #ffe6f2, #e6f7ff);
+            min-height: 100vh;
+        }
+
+        .cart-table {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+            .cart-table th, .cart-table td {
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .cart-table th {
+                background: linear-gradient(45deg, #ff6f91, #ffcc70);
+                color: white;
+                font-weight: bold;
+            }
+
+            .cart-table img {
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+        .quantity-input {
+            width: 60px;
+            text-align: center;
+            border-radius: 5px;
+            border: 2px solid #ffd6e8;
+        }
+
+        .btn-action {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn-action:hover {
+                transform: scale(1.05);
+            }
+
+        .btn-danger {
+            background: linear-gradient(45deg, #ff4d4d, #ff8080);
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .cart-summary h4 {
+                font-family: 'Comic Sans MS', cursive, sans-serif;
+                color: #ff6f91;
+                margin: 0;
+            }
+
+        .icecream-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        .alert {
+            border-radius: 10px;
+        }
+    </style>
+}
+
+<div class="cart-container">
+    <h2 class="text-center mb-4" style="font-family: 'Comic Sans MS', cursive, sans-serif; color: #ff6f91;">Giỏ hàng của bạn <span class="icecream-emoji">🛒</span></h2>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    @if (Model.CartItems == null || !Model.CartItems.Any())
+    {
+        <div class="text-center">
+            <p style="color: #555;">Giỏ hàng của bạn đang trống! Hãy thêm một vài món kem ngon nhé 🍦</p>
+            <a href="/User/Index" class="btn btn-action">Mua sắm ngay</a>
+        </div>
+    }
+    else
+    {
+        <table class="table cart-table">
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên kem</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Tổng</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="cartList">
+                @foreach (var item in Model.CartItems)
+                {
+                    <tr data-cart-id="@item.CartId">
+                        <td><img src="@item.Image" alt="@item.IceCreamName" onerror="this.src='https://example.com/default.jpg'" /></td>
+                        <td>@item.IceCreamName</td>
+                        <td>$@item.Price.ToString("F2")</td>
+                        <td>
+                            <input type="number" class="quantity-input" value="@item.Quantity" min="1" onchange="updateQuantity(@item.CartId, this.value)" />
+                        </td>
+                        <td>$@((item.Price * item.Quantity).ToString("F2"))</td>
+                        <td>
+                            <button class="btn btn-danger btn-action" onclick="deleteCartItem(@item.CartId)">Xóa <span class="icecream-emoji">🗑️</span></button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <h4>Tổng cộng: <span id="cartTotal">$@Model.CartItems.Sum(item => item.Price * item.Quantity).ToString("F2")</span></h4>
+            <div>
+                <button class="btn btn-danger btn-action mr-2" onclick="clearCart()">Xóa tất cả <span class="icecream-emoji">🗑️</span></button>
+                <button class="btn btn-action" onclick="window.location.href='/User/Checkout'">Tạo đơn hàng <span class="icecream-emoji">📦</span></button>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        const userId = @Model.CurrentUserId; // Lấy UserId từ server
+        const token = '@HttpContext.Session.GetString("JWToken")'; // Lấy token từ session
+
+        async function updateQuantity(cartId, quantity) {
+            if (!userId || !token) {
+                alert("Vui lòng đăng nhập để thực hiện thao tác này!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            if (quantity < 1) {
+                alert("Số lượng phải lớn hơn hoặc bằng 1!");
+                return;
+            }
+
+            // Lấy IceCreamId từ hàng hiện tại (nếu cần)
+            const row = document.querySelector(`tr[data-cart-id="${cartId}"]`);
+            const iceCreamId = parseInt(row.dataset.iceCreamId) || 0; // Cần thêm data-iceCreamId vào HTML nếu cần
+
+            const cartItem = {
+                CartId: cartId,
+                UserId: userId,
+                IceCreamId: iceCreamId, // Đảm bảo IceCreamId được gửi lên
+                Quantity: parseInt(quantity),
+                CreatedAt: new Date().toISOString() // Đảm bảo CreatedAt được gửi lên
+            };
+
+            try {
+                const response = await fetch(`https://localhost:7283/api/CartApi/${cartId}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(cartItem)
+                });
+
+                if (response.ok) {
+                    // Cập nhật tổng tiền trên giao diện
+                    const price = parseFloat(row.cells[2].textContent.replace('$', ''));
+                    row.cells[4].textContent = `$${(price * quantity).toFixed(2)}`;
+
+                    // Cập nhật tổng cộng
+                    updateCartTotal();
+                } else {
+                    // Xử lý phản hồi lỗi không phải JSON
+                    const contentType = response.headers.get("content-type");
+                    let errorMessage = "Lỗi không xác định";
+                    if (contentType && contentType.includes("application/json")) {
+                        const error = await response.json();
+                        errorMessage = error.message || "Lỗi không xác định";
+                    } else {
+                        errorMessage = await response.text();
+                    }
+                    alert(`Không thể cập nhật số lượng: ${errorMessage}`);
+                }
+            } catch (error) {
+                console.error("Lỗi khi cập nhật số lượng:", error);
+                alert("Đã xảy ra lỗi khi cập nhật số lượng: " + error.message);
+            }
+        }
+
+        async function deleteCartItem(cartId) {
+            if (!userId || !token) {
+                alert("Vui lòng đăng nhập để thực hiện thao tác này!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            if (!confirm("Bạn có chắc muốn xóa mục này khỏi giỏ hàng?")) return;
+
+            try {
+                const response = await fetch(`https://localhost:7283/api/CartApi/${cartId}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    // Xóa hàng khỏi giao diện
+                    const row = document.querySelector(`tr[data-cart-id="${cartId}"]`);
+                    row.remove();
+
+                    // Cập nhật tổng cộng
+                    updateCartTotal();
+
+                    // Kiểm tra nếu giỏ hàng trống
+                    if (document.querySelectorAll("#cartList tr").length === 0) {
+                        window.location.reload();
+                    }
+                } else {
+                    const error = await response.json();
+                    alert(`Không thể xóa mục: ${error.message || 'Lỗi không xác định'}`);
+                }
+            } catch (error) {
+                console.error("Lỗi khi xóa mục:", error);
+                alert("Đã xảy ra lỗi khi xóa mục: " + error.message);
+            }
+        }
+
+        async function clearCart() {
+            if (!userId || !token) {
+                alert("Vui lòng đăng nhập để thực hiện thao tác này!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            if (!confirm("Bạn có chắc muốn xóa tất cả các mục trong giỏ hàng?")) return;
+
+            try {
+                const response = await fetch(`https://localhost:7283/api/CartApi/user/${userId}`, {
+                    method: "DELETE",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    window.location.reload();
+                } else {
+                    const error = await response.json();
+                    alert(`Không thể xóa giỏ hàng: ${error.message || 'Lỗi không xác định'}`);
+                }
+            } catch (error) {
+                console.error("Lỗi khi xóa giỏ hàng:", error);
+                alert("Đã xảy ra lỗi khi xóa giỏ hàng: " + error.message);
+            }
+        }
+
+        async function createOrder() {
+            if (!userId || !token) {
+                alert("Vui lòng đăng nhập để thực hiện thao tác này!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            if (!confirm("Bạn có chắc muốn tạo đơn hàng từ giỏ hàng này?")) return;
+
+            try {
+                const response = await fetch(`https://localhost:7283/api/CartApi/create-order/${userId}`, {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const order = await response.json();
+                    alert(`Đơn hàng đã được tạo thành công! Mã đơn hàng: ${order.orderId}`);
+                    window.location.reload();
+                } else {
+                    const error = await response.json();
+                    alert(`Không thể tạo đơn hàng: ${error.message || 'Lỗi không xác định'}`);
+                }
+            } catch (error) {
+                console.error("Lỗi khi tạo đơn hàng:", error);
+                alert("Đã xảy ra lỗi khi tạo đơn hàng: " + error.message);
+            }
+        }
+
+        function updateCartTotal() {
+            let total = 0;
+            const rows = document.querySelectorAll("#cartList tr");
+            rows.forEach(row => {
+                const subtotal = parseFloat(row.cells[4].textContent.replace('$', ''));
+                total += subtotal;
+            });
+            document.getElementById("cartTotal").textContent = `$${total.toFixed(2)}`;
+        }
+    </script>
+}

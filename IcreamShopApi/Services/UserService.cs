@@ -49,7 +49,7 @@ namespace IcreamShopApi.Services
             return true;
         }
 
-        public async Task EditUser(User user)
+        /*public async Task EditUser(User user)
         {
             var existingUser = await _userRepository.GetUserById(user.UserId);
             if(existingUser == null)
@@ -57,6 +57,24 @@ namespace IcreamShopApi.Services
                 throw new Exception("Khong tim thay User");
             }
             await _userRepository.EditUser(user);
+        }*/
+        public async Task EditUser(User user)
+        {
+            var existingUser = await _userRepository.GetUserById(user.UserId);
+            if (existingUser == null)
+            {
+                throw new Exception("Không tìm thấy User");
+            }
+
+            // Cập nhật các trường từ user vào existingUser
+            existingUser.FullName = user.FullName;
+            existingUser.Email = user.Email;
+            existingUser.PhoneNumber = user.PhoneNumber;
+            existingUser.Address = user.Address;
+            existingUser.Role = user.Role;
+            existingUser.PasswordHash = user.PasswordHash ?? existingUser.PasswordHash; // Đã được xử lý ở Controller để giữ nguyên nếu null
+
+            await _userRepository.EditUser(existingUser);
         }
 
         //Register a new user

@@ -2,6 +2,7 @@
 using IcreamShopApi.DTOs;
 using IcreamShopApi.Models;
 using IcreamShopApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -56,15 +57,14 @@ namespace IcreamShopApi.Controllers
             await _orderService.EditOrder(order);
             return Ok();
         }
-
-
-		[HttpGet("user/{userId}")]
+      
+        [HttpGet("user/{userId}")]
 		public async Task<ActionResult<IEnumerable<OrderDTO>>> GetOrdersByUser(int userId)
 		{
 			var orders = await _context.Orders
 				.Where(o => o.UserId == userId)
 				.Include(o => o.OrderDetails)
-					.ThenInclude(od => od.IceCream) // Lấy thông tin kem
+					.ThenInclude(od => od.IceCream) 
 				.ToListAsync();
 
 			if (orders == null || orders.Count == 0)
@@ -76,7 +76,9 @@ namespace IcreamShopApi.Controllers
 				TotalPrice = o.TotalPrice,
 				Status = o.Status,
 				OrderDate = o.OrderDate,
-				OrderDetails = o.OrderDetails.Select(od => new OrderDetailDTO
+                ShippingAddress = o.ShippingAddress,
+
+                OrderDetails = o.OrderDetails.Select(od => new OrderDetailDTO
 				{
 					IceCreamName = od.IceCream.Name,
 					ImageUrl = od.IceCream.ImageUrl,

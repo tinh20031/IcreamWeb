@@ -9,6 +9,6 @@
 		public decimal Price { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public string IceCreamName { get; set; }
-		public string Image { get; set; } 
+		public string Image { get; set; }
 	}
 }

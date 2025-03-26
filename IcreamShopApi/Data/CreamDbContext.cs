@@ -16,7 +16,9 @@ namespace IcreamShopApi.Data
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Order> Orders { get; set; }
 		public DbSet<OrderDetail> OrderDetails { get; set; }
-		public DbSet<Review> Reviews { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+      
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -49,11 +51,25 @@ namespace IcreamShopApi.Data
 				.WithMany(u => u.Reviews)
 				.HasForeignKey(r => r.UserId)
 				.OnDelete(DeleteBehavior.Restrict);
-			
-			
 
 
-			modelBuilder.Entity<Category>().HasData(
+            modelBuilder.Entity<Address>()
+                .HasOne(a => a.User)
+                .WithMany()
+                .HasForeignKey(a => a.UserId);
+          
+
+            modelBuilder.Entity<IceCream>()
+        .HasOne(i => i.Category)
+        .WithMany(c => c.IceCreams)
+        .HasForeignKey(i => i.CategoryId)
+        .IsRequired(false); // Không bắt buộc có Category
+
+
+
+
+
+            modelBuilder.Entity<Category>().HasData(
 	  new Category { CategoryId = 1, Name = "Chocolate", image = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Chocolate.jpg/1155px-Chocolate.jpg" }
 
   );

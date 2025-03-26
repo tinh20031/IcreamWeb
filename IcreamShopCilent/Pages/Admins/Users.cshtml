@@ -1,0 +1,267 @@
+﻿@page
+@model IcreamShopCilent.Pages.Admins.UsersModel
+@{
+    ViewData["Title"] = "Quản Lý Người Dùng";
+}
+
+<h2>Quản Lý Người Dùng</h2>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+    Thêm Người Dùng Mới
+</button>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>Số Điện Thoại</th>
+            <th>Địa Chỉ</th>
+            <th>Vai Trò</th>
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>@user.Address</td>
+                <td>@user.Role</td>
+                <td>
+                    <button class="btn btn-warning btn-sm" onclick="openEditModal(@user.UserId)">Sửa</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteUser(@user.UserId)">Xóa</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Modal Thêm Người Dùng -->
+<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addUserModalLabel">Thêm Người Dùng Mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addUserForm">
+                    <div class="mb-3">
+                        <label class="form-label">Họ Tên</label>
+                        <input type="text" class="form-control" id="addFullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="addEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mật Khẩu</label>
+                        <input type="password" class="form-control" id="addPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số Điện Thoại</label>
+                        <input type="text" class="form-control" id="addPhoneNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Địa Chỉ</label>
+                        <input type="text" class="form-control" id="addAddress" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Vai Trò</label>
+                        <select class="form-control" id="addRole">
+                            <option value="user">user</option>
+                            <option value="Admin">admin</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="addUser()">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Sửa Người Dùng -->
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUserModalLabel">Sửa Thông Tin Người Dùng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editUserForm">
+                    <input type="hidden" id="editUserId">
+                    <div class="mb-3">
+                        <label class="form-label">Họ Tên</label>
+                        <input type="text" class="form-control" id="editFullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" id="editEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Số Điện Thoại</label>
+                        <input type="text" class="form-control" id="editPhoneNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Địa Chỉ</label>
+                        <input type="text" class="form-control" id="editAddress" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Vai Trò</label>
+                        <select class="form-control" id="editRole">
+                            <option value="user">user</option>
+                            <option value="Admin">admin</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="editUser()">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const apiUrl = "https://localhost:7283/api/UserApi";
+        const token = "@HttpContext.Session.GetString("JwtToken")";
+
+        async function loadUsers() {
+            try {
+                const response = await fetch(apiUrl, {
+                    headers: { 
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+                if (!response.ok) throw new Error('Failed to load users');
+                window.location.reload();
+            } catch (error) {
+                console.error('Error loading users:', error);
+                alert('Không thể tải danh sách người dùng');
+            }
+        }
+
+        async function addUser() {
+            const user = {
+                fullName: document.getElementById("addFullName").value,
+                email: document.getElementById("addEmail").value,
+                passwordHash: document.getElementById("addPassword").value, // Sửa từ password thành passwordHash
+                phoneNumber: document.getElementById("addPhoneNumber").value,
+                address: document.getElementById("addAddress").value,
+                role: document.getElementById("addRole").value
+            };
+
+            try {
+                const response = await fetch(apiUrl, { // Sửa endpoint từ api/Auth/register thành api/UserApi
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(user)
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Thêm thất bại: ${errorText}`);
+                }
+
+                $("#addUserModal").modal("hide");
+                await loadUsers();
+            } catch (error) {
+                console.error('Error adding user:', error);
+                alert('Lỗi khi thêm người dùng: ' + error.message);
+            }
+        }
+
+        async function openEditModal(id) {
+            try {
+                const response = await fetch(`${apiUrl}/${id}`, {
+                    headers: { 
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const user = await response.json();
+
+                document.getElementById("editUserId").value = user.userId || '';
+                document.getElementById("editFullName").value = user.fullName || '';
+                document.getElementById("editEmail").value = user.email || '';
+                document.getElementById("editPhoneNumber").value = user.phoneNumber || '';
+                document.getElementById("editAddress").value = user.address || '';
+                document.getElementById("editRole").value = user.role || 'user';
+
+                $("#editUserModal").modal("show");
+            } catch (error) {
+                console.error('Error opening edit modal:', error);
+                alert('Không thể lấy thông tin người dùng: ' + error.message);
+            }
+        }
+
+        async function editUser() {
+    const user = {
+        userId: document.getElementById("editUserId").value,
+        fullName: document.getElementById("editFullName").value,
+        email: document.getElementById("editEmail").value,
+        phoneNumber: document.getElementById("editPhoneNumber").value,
+        address: document.getElementById("editAddress").value,
+        role: document.getElementById("editRole").value
+        // Không gửi passwordHash
+    };
+
+    try {
+        const response = await fetch(`${apiUrl}/${user.userId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(user)
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Cập nhật thất bại: ${errorText}`);
+        }
+
+        $("#editUserModal").modal("hide");
+        await loadUsers();
+    } catch (error) {
+        console.error('Error editing user:', error);
+        alert('Lỗi khi cập nhật người dùng: ' + error.message);
+    }
+}
+
+        async function deleteUser(id) {
+            if (confirm("Bạn có chắc chắn muốn xóa người dùng này không?")) {
+                try {
+                    const response = await fetch(`${apiUrl}/${id}`, {
+                        method: "DELETE",
+                        headers: { 
+                            "Authorization": `Bearer ${token}`,
+                            "Content-Type": "application/json"
+                        }
+                    });
+                    if (!response.ok) throw new Error('Xóa thất bại');
+                    await loadUsers();
+                } catch (error) {
+                    console.error('Error deleting user:', error);
+                    alert('Lỗi khi xóa người dùng: ' + error.message);
+                }
+            }
+        }
+    </script>
+}

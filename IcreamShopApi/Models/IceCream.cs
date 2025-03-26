@@ -17,10 +17,10 @@ namespace IcreamShopApi.Models
 		public string ImageUrl { get; set; }
 		public DateTime CreatedAt { get; set; } = DateTime.Now;
 		[ForeignKey("Category")]
-		[Required]
 		public int CategoryId { get; set; }
-		public virtual Category Category { get; set; }
 
+		[JsonIgnore]
+		public virtual Category? Category { get; set; }
 		// Liên kết với OrderDetails và Reviews
 		[JsonIgnore]
 		public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
