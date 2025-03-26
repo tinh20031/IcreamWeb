@@ -20,6 +20,18 @@ namespace IcreamShopApi.Services
 			return await _iceCreamRepository.GetAllIceCreams();
 		}
 
+		public async Task<List<IceCream>> search(string name ) { 
+		
+		return await _iceCreamRepository.Search( name );
+		
+		
+		
+		}
+
+
+
+
+
 		public async Task<IceCream> GetIceCreamById(int id)
 		{
 			return await _iceCreamRepository.GetIcecreamById(id);

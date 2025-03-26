@@ -24,6 +24,14 @@ namespace IcreamShopApi.Repository
 
 		}
 
+		//search by name 
+		public async Task<List<IceCream>> Search(string name)
+		{
+			return await _context.IceCreams
+				.Where(s => s.Name.Contains(name.Trim()))
+				.ToListAsync();
+		}
+
 		public async Task AddIceCream(IceCream iceCream)
 		{
 			await _context.IceCreams.AddAsync(iceCream);
@@ -56,6 +64,8 @@ namespace IcreamShopApi.Repository
 			_context.Entry(existingIceCream).CurrentValues.SetValues(iceCream);
 			await _context.SaveChangesAsync();
 		}
+
+
 
 
 	}

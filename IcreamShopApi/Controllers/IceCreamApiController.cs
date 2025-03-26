@@ -1,5 +1,6 @@
 ﻿using IcreamShopApi.Models;
 using IcreamShopApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,6 +25,15 @@ namespace IcreamShopApi.Controllers
 			return Ok(iceCreams);
 		}
 
+		[HttpGet("search")]
+		//search 
+		public async Task<ActionResult<List<IceCream>>> search(string name )
+		{
+			var search = await _iceCreamService.search(name);
+			return Ok(search);
+		}
+
+
 		//get kem theo id 
 		[HttpGet("{id}")]
 		public async Task<ActionResult<IceCream>> GetIcreamById( int id)
@@ -33,7 +43,7 @@ namespace IcreamShopApi.Controllers
 		}
 
 		//theem kem 
-
+		[Authorize(Roles = "Admin")]
 		[HttpPost]
 		public async Task<ActionResult<IceCream>> AddIceCream ([FromBody] IceCream iceCream)
 		{
@@ -42,6 +52,7 @@ namespace IcreamShopApi.Controllers
 		}
 
 		//xoa 
+		[Authorize(Roles = "Admin")]
 		[HttpDelete("{id}")]
 		public async Task<ActionResult<IceCream>> deleteIceCream(int id)
 		{
@@ -50,6 +61,7 @@ namespace IcreamShopApi.Controllers
 
 		}
 		//edit 
+		[Authorize(Roles = "Admin")]
 		[HttpPut("{id}")]
 		public async Task<ActionResult<IceCream>> EditCream(	int id, [FromBody]  IceCream iceCream)
 		{

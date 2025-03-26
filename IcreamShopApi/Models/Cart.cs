@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.Text.Json.Serialization;
 namespace IcreamShopApi.Models
 {
 	public class Cart
@@ -13,9 +13,12 @@ namespace IcreamShopApi.Models
 		public int Quantity { get; set; }
 		public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-		// Khóa ngoại
-		public User User { get; set; }
-		public IceCream IceCream { get; set; }
+		[JsonIgnore]
+		[ForeignKey("UserId")]
+		public User? User { get; set; } 
+		[JsonIgnore]
+		[ForeignKey("IceCreamId")]
+		public IceCream? IceCream { get; set; }
 	}
 
 }

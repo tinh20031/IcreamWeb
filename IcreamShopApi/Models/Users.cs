@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace IcreamShopApi.Models
 {
@@ -16,8 +17,11 @@ namespace IcreamShopApi.Models
 		public DateTime CreatedAt { get; set; } = DateTime.Now;
 
 		// Liên kết với Orders và Reviews
-		public ICollection<Order> Orders { get; set; }
-		public ICollection<Review> Reviews { get; set; }
+		[JsonIgnore]
+		public ICollection<Order> Orders { get; set; } = new List<Order>();
+
+		[JsonIgnore]
+		public ICollection<Review> Reviews { get; set; } = new List<Review>();
 	}
 
 }

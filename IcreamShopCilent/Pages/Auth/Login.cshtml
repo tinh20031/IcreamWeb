@@ -1,0 +1,179 @@
+﻿@page
+@model IcreamShopCilent.Pages.Auth.LoginModel
+@{
+    Layout = "_Layout"; // Kế thừa layout chung
+    var role = HttpContext.Session.GetString("Role");
+}
+
+@section Styles {
+    <style>
+        /* Loại bỏ display: flex và align-items: center trên body */
+        /* Thay vào đó, áp dụng cho .login-container */
+        .login-container {
+            background: linear-gradient(135deg, #fff3e0, #ffe6f2, #e6f7ff);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: white;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .card-header {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            color: white;
+            border-radius: 20px 20px 0 0;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #ffd6e8;
+            transition: border-color 0.3s;
+        }
+
+            .form-control:focus {
+                border-color: #ff6f91;
+                box-shadow: none;
+            }
+
+        .btn icecream {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn icecream:hover {
+                transform: scale(1.05);
+            }
+
+        .btn-social {
+            border-radius: 10px;
+            padding: 10px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn-social:hover {
+                transform: scale(1.05);
+            }
+
+        .icecream-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+
+        hr {
+            border-top: 2px dashed #ffcc70;
+        }
+
+        .register-link {
+            color: #ff6f91;
+            font-weight: bold;
+        }
+
+            .register-link:hover {
+                color: #ffcc70;
+                text-decoration: none;
+            }
+    </style>
+}
+
+@section Scripts {
+    <!-- Font Awesome for social media icons -->
+    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+}
+
+<div class="login-container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Welcome to Ice Cream Shop! 🍦</h2>
+        </div>
+        <div class="card-body">
+            @if (role == null) // Chưa đăng nhập
+            {
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="email" id="Email" asp-for="LoginDto.Email" class="form-control" required placeholder="Your sweet email" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Password</label>
+                        <input type="password" id="Password" asp-for="LoginDto.Password" class="form-control" required placeholder="Your secret flavor" />
+                    </div>
+
+                    <div class="d-grid mb-3">
+                        <button type="submit" class="btn btn icecream">Login With Email <span class="icecream-emoji">🍨</span></button>
+                    </div>
+                </form>
+
+                <hr>
+
+                <!-- Facebook login button -->
+                <div class="d-grid mb-3">
+                    <a class="btn btn-primary btn-social" href="/Auth/Login?handler=FacebookLogin">
+                        <i class="fab fa-facebook-f me-2"></i>Login with Facebook
+                    </a>
+                </div>
+
+                <!-- Google login button -->
+                <div class="d-grid mb-3">
+                    <a class="btn btn-danger btn-social" href="/Auth/Login?handler=GoogleLogin">
+                        <i class="fab fa-google me-2"></i>Login with Google
+                    </a>
+                </div>
+
+                <hr>
+
+                <div class="text-center">
+                    <p>
+                        New to our shop?
+                        <a class="register-link" asp-area="" asp-page="/Auth/Register">Register</a> for a cool treat!
+                    </p>
+                </div>
+            }
+            else // Đã đăng nhập
+            {
+                <div class="text-center">
+                    <h3>Hello, @HttpContext.Session.GetString("FullName")! 🍦</h3>
+                    @if (role == "admin")
+                    {
+                        <p>You are an <strong>Admin</strong>! Manage the shop:</p>
+                        <a class="btn btn icecream" asp-page="/Admins/DashboardModel">Go to Admin Dashboard</a>
+                    }
+                    else if (role == "user")
+                    {
+                        <p>You are a <strong>User</strong>! Enjoy your ice cream:</p>
+                        <a class="btn btn icecream" asp-page="/User/Index">Go to Home</a>
+                    }
+                    <hr>
+                    <form method="post" asp-page-handler="Logout">
+                        <button type="submit" class="btn btn-secondary">Logout</button>
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,212 @@
+﻿@page
+@model IcreamShopCilent.Pages.User.IndexModel
+@{
+    ViewData["Title"] = "Cửa hàng kem";
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <style>
+        /* Style cho trang Home */
+        .home-container {
+            padding: 20px;
+            background: linear-gradient(135deg, #fff3e0, #ffe6f2, #e6f7ff);
+            min-height: 100vh;
+        }
+
+        .search-filter {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .form-control-search {
+            border-radius: 10px;
+            border: 2px solid #ffd6e8;
+            transition: border-color 0.3s;
+        }
+
+            .form-control-search:focus {
+                border-color: #ff6f91;
+                box-shadow: none;
+            }
+
+        .btn.icecream {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 8px 15px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn.icecream:hover {
+                transform: scale(1.05);
+            }
+
+        .icecream-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            overflow: hidden;
+            background: white;
+            margin-bottom: 20px;
+        }
+
+            .icecream-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-title {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff6f91;
+            font-size: 1.2rem;
+        }
+
+        .card-text {
+            color: #555;
+        }
+
+        .btn-add-cart {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+            .btn-add-cart:hover {
+                transform: scale(1.05);
+            }
+
+        .icecream-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+    </style>
+}
+
+<div class="home-container">
+    <div class="search-filter">
+        <div class="input-group w-50">
+            <input id="searchInput" type="text" class="form-control form-control-search" placeholder="Tìm kiếm kem..." aria-label="Tìm kiếm" />
+            <button class="btn btn icecream" type="button" onclick="searchIceCream()">Tìm kiếm <span class="icecream-emoji">🔍</span></button>
+        </div>
+    </div>
+
+    <div id="iceCreamList" class="row row-cols-1 row-cols-md-3 g-4"></div>
+</div>
+
+@section Scripts {
+    <script>
+        // Giả sử UserId được truyền từ server (thay thế bằng logic xác thực thực tế)
+        const userId = @Model.CurrentUserId; // Cần triển khai trong IndexModel để lấy UserId
+
+        async function fetchIceCreams(query = "") {
+            let baseUrl = "https://localhost:7283";  
+            let url = query ? `${baseUrl}/api/IceCreamApi/search?name=${query}` : `${baseUrl}/api/IceCreamApi`;
+
+            try {
+                let response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error("Không thể lấy danh sách kem.");
+                }
+                let data = await response.json();
+                renderIceCreams(data);
+            } catch (error) {
+                console.error("Lỗi khi lấy danh sách kem:", error);
+                alert("Đã xảy ra lỗi khi tải danh sách kem.");
+            }
+        }
+
+        function renderIceCreams(data) {
+            let container = document.getElementById("iceCreamList");
+            container.innerHTML = "";
+            data.forEach(item => {
+                container.innerHTML += `
+                    <div class="col">
+                        <div class="card icecream-card">
+                            <img src="${item.imageUrl}" class="card-img-top" alt="${item.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                                <p class="card-text">$${item.price.toFixed(2)}</p>
+                                                <button class="btn btn-add-cart" onclick="addToCart(${item.iceCreamId})">Thêm vào giỏ hàng <span class="icecream-emoji">🛒</span></button>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+        }
+
+        function searchIceCream() {
+            let query = document.getElementById("searchInput").value;
+            fetchIceCreams(query);
+        }
+
+     
+
+        const token = '@HttpContext.Session.GetString("JWToken")'; // Lấy token từ session
+
+        async function addToCart(iceCreamId) {
+            if (!userId) {
+                alert("Vui lòng đăng nhập để thêm vào giỏ hàng!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            console.log("IceCreamId gửi lên:", iceCreamId); // Log IceCreamId
+
+            const cartItem = {
+                UserId: userId,
+                IceCreamId: iceCreamId,
+                Quantity: 1
+            };
+
+            try {
+                const response = await fetch("https://localhost:7283/api/CartApi", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(cartItem)
+                });
+
+                console.log("Mã trạng thái HTTP:", response.status);
+                const contentType = response.headers.get("content-type");
+                console.log("Content-Type:", contentType);
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(`Đã thêm ${result.iceCream?.name || 'kem'} vào giỏ hàng!`);
+                } else {
+                    if (contentType && contentType.includes("application/json")) {
+                        const error = await response.json();
+                        console.error("Lỗi từ API:", error);
+                        alert(`Không thể thêm vào giỏ hàng: ${error.message || 'Lỗi không xác định'} (Status: ${response.status})`);
+                    } else {
+                        const errorText = await response.text();
+                        console.error("Phản hồi không phải JSON:", errorText);
+                        alert(`Không thể thêm vào giỏ hàng: ${errorText} (Status: ${response.status})`);
+                    }
+                }
+            } catch (error) {
+                console.error("Lỗi khi thêm vào giỏ hàng:", error);
+                alert("Đã xảy ra lỗi khi thêm vào giỏ hàng: " + error.message);
+            }
+        }
+
+        // Tự động lấy danh sách kem khi trang được tải
+        fetchIceCreams();
+    </script>
+}

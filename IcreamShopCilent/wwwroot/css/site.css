@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -19,4 +19,49 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+/* Custom styles for Ice Cream Shop Navbar */
+.ice-cream-nav {
+    background: linear-gradient(90deg, #ff6f91, #ffcc70); /* Gradient màu kem */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Font vui nhộn */
+    font-size: 1.5rem;
+    color: white !important;
+    transition: transform 0.3s;
+}
+
+    .navbar-brand:hover {
+        transform: scale(1.05);
+    }
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding: 8px 15px !important;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 576px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .nav-link {
+        text-align: center;
+    }
 }
