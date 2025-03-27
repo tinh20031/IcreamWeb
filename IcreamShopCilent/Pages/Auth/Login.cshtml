@@ -164,6 +164,7 @@
                         <a class="btn btn icecream" asp-page="/Admins/Users">User Management</a>
                         <a class="btn btn icecream" asp-page="/Admins/Categories">Category Management</a>
                         <a class="btn btn icecream" asp-page="/Admins/IceCreamAdmin">IceCream Management</a>
+                        <a class="btn btn icecream" asp-page="/Admins/AdminChat">Chat With User</a>
                     }
                     else if (role == "user")
                     {
@@ -176,6 +177,13 @@
                     </form>
                 </div>
             }
+            @if (!ModelState.IsValid)
+            {
+                <div class="alert alert-danger">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </div>
+            }
         </div>
     </div>
+   
 </div>

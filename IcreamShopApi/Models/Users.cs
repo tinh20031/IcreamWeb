@@ -14,7 +14,8 @@ namespace IcreamShopApi.Models
 		public string PhoneNumber { get; set; }
 		public string Address { get; set; }
 		public string Role { get; set; } = "Customer";
-		public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public bool IsEmailVerified { get; set; } = false; // Thêm trường này
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
 
 		// Liên kết với Orders và Reviews
 		[JsonIgnore]

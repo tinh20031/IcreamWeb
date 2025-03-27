@@ -18,9 +18,10 @@ namespace IcreamShopApi.Data
 		public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Review> Reviews { get; set; }
-      
+        public DbSet<VerificationToken> VerificationTokens { get; set; }
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<User>()
 				.HasIndex(u => u.Email)

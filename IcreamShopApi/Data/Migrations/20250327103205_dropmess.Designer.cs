@@ -4,6 +4,7 @@ using IcreamShopApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IcreamShopApi.Data.Migrations
 {
     [DbContext(typeof(CreamDbContext))]
-    partial class CreamDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250327103205_dropmess")]
+    partial class dropmess
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -168,7 +171,7 @@ namespace IcreamShopApi.Data.Migrations
                         {
                             IceCreamId = 1,
                             CategoryId = 1,
-                            CreatedAt = new DateTime(2025, 3, 27, 17, 54, 39, 142, DateTimeKind.Local).AddTicks(9566),
+                            CreatedAt = new DateTime(2025, 3, 27, 17, 32, 4, 912, DateTimeKind.Local).AddTicks(3365),
                             Description = "kem xin",
                             ImageUrl = "choco.jpg",
                             Name = "Chocolate Ice Cream",
@@ -296,9 +299,6 @@ namespace IcreamShopApi.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsEmailVerified")
-                        .HasColumnType("bit");
-
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -318,31 +318,6 @@ namespace IcreamShopApi.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("IcreamShopApi.Models.VerificationToken", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("ExpiresAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("VerificationTokens");
                 });
 
             modelBuilder.Entity("IcreamShopApi.Models.Address", b =>
@@ -429,17 +404,6 @@ namespace IcreamShopApi.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("IceCream");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("IcreamShopApi.Models.VerificationToken", b =>
-                {
-                    b.HasOne("IcreamShopApi.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("User");
                 });

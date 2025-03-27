@@ -1,0 +1,65 @@
+﻿@page
+@model IcreamShopCilent.Pages.Admins.AdminChatModel
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+</head>
+<body>
+    <h2>Admin Chat</h2>
+    <div id="chatBox" style="border:1px solid #ddd; height:300px; overflow-y:auto;"></div>
+    <input type="text" id="messageInput" placeholder="Nhập tin nhắn..." />
+    <button onclick="sendMessage()">Gửi</button>
+
+    <script>
+        const apiUrl = "https://localhost:7283/api/Chat/send"; // API gửi tin nhắn
+        const hubUrl = "https://localhost:7283/chatHub"; // URL đúng của SignalR Hub
+
+        // Kết nối tới SignalR Hub
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl(hubUrl)
+            .withAutomaticReconnect()
+            .build();
+
+        connection.start()
+            .then(() => console.log("Kết nối thành công với SignalR!"))
+            .catch(err => console.error("Lỗi kết nối SignalR:", err));
+
+        // Lắng nghe tin nhắn từ server
+        connection.on("ReceiveMessage", (user, message) => {
+            document.getElementById("chatBox").innerHTML += `<p><b>${user}:</b> ${message}</p>`;
+        });
+
+        async function sendMessage() {
+            const message = document.getElementById("messageInput").value;
+            if (!message) return;
+
+            try {
+                // Gửi tin nhắn qua API
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ user: "Admin", text: message })
+                });
+
+                if (response.ok) {
+                    console.log("Tin nhắn đã gửi thành công!");
+                    document.getElementById("messageInput").value = ""; // Xóa input sau khi gửi
+                } else {
+                    console.error("Lỗi gửi tin nhắn:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Lỗi khi gửi tin nhắn:", error);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
