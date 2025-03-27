@@ -359,7 +359,84 @@ namespace IcreamShopApi.Controllers
                 return BitConverter.ToString(hash).Replace("-", "").ToLower();
             }
         }
+        [HttpGet("vnpay-return-for-app")]
+        public async Task<IActionResult> VnpayReturnforapp()
+        {
+            _logger.LogInformation("Nhận yêu cầu từ VNPAY tại vnpay-return.");
+            try
+            {
+                var vnpayData = Request.Query;
+                _logger.LogInformation("Tham số VNPAY nhận được: {VnpayData}", vnpayData.ToString());
 
+                var vnp_SecureHash = vnpayData["vnp_SecureHash"];
+                var vnp_TxnRef = vnpayData["vnp_TxnRef"];
+                var vnp_ResponseCode = vnpayData["vnp_ResponseCode"];
+                var vnp_TransactionStatus = vnpayData["vnp_TransactionStatus"];
+
+                // Kiểm tra chữ ký
+                var hashParams = vnpayData.Keys
+                    .Where(k => k != "vnp_SecureHash" && k != "vnp_SecureHashType")
+                    .OrderBy(k => k)
+                    .Select(k => $"{k}={Uri.EscapeDataString(vnpayData[k])}");
+                var signData = string.Join("&", hashParams);
+                _logger.LogInformation("Chuỗi dữ liệu để tính checksum: {SignData}", signData);
+                var computedHash = HmacSha512(signData, _vnpayConfig.HashSecret);
+                _logger.LogInformation("Chữ ký tính được: {ComputedHash}, Chữ ký nhận được: {VnpSecureHash}", computedHash, vnp_SecureHash);
+
+                if (computedHash != vnp_SecureHash)
+                {
+                    _logger.LogWarning("Chữ ký VNPAY không hợp lệ.");
+                    return BadRequest(new { status = "error", message = "Invalid checksum" });
+                }
+
+                // Cập nhật trạng thái đơn hàng
+                if (int.TryParse(vnp_TxnRef, out int orderId))
+                {
+                    var order = _context.Orders.FirstOrDefault(o => o.OrderId == orderId);
+                    if (order == null)
+                    {
+                        _logger.LogWarning("Không tìm thấy đơn hàng với OrderId: {OrderId}", orderId);
+                        return NotFound(new { status = "error", message = "Order not found" });
+                    }
+
+                    if (vnp_ResponseCode == "00" && vnp_TransactionStatus == "00")
+                    {
+                        order.Status = "Paid";
+                        _logger.LogInformation("Cập nhật trạng thái đơn hàng {OrderId}: Đã thanh toán", orderId);
+                        await _context.SaveChangesAsync();
+                        return Ok(new
+                        {
+                            status = "success",
+                            orderId = orderId,
+                            message = "Thanh toán thành công"
+                        });
+                    }
+                    else
+                    {
+                        order.Status = "Failed";
+                        _logger.LogInformation("Cập nhật trạng thái đơn hàng {OrderId}: Thanh toán thất bại", orderId);
+                        await _context.SaveChangesAsync();
+                        return Ok(new
+                        {
+                            status = "failure",
+                            orderId = orderId,
+                            message = "Thanh toán thất bại",
+                            responseCode = vnp_ResponseCode
+                        });
+                    }
+                }
+                else
+                {
+                    _logger.LogWarning("Mã giao dịch VNPAY không hợp lệ: {VnpTxnRef}", vnp_TxnRef);
+                    return BadRequest(new { status = "error", message = "Invalid order ID" });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi khi xử lý VnpayReturn.");
+                return StatusCode(500, new { status = "error", message = "Đã xảy ra lỗi khi xử lý kết quả thanh toán." });
+            }
+        }
 
         [HttpGet("provinces")]
         public async Task<IActionResult> GetProvinces()

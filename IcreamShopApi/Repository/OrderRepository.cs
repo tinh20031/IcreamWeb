@@ -18,10 +18,7 @@ namespace IcreamShopApi.Repository
             return await _context.Orders.ToListAsync();
         }
 
-        public async Task<Order> GetOrderById(int Id)
-        {
-            return await _context.Orders.FindAsync(Id);
-        }
+   
 
         public async Task AddOrder(Order order)
         {
@@ -51,7 +48,13 @@ namespace IcreamShopApi.Repository
             _context.Entry(existingOrder).CurrentValues.SetValues(order);
             await _context.SaveChangesAsync();
         }
+        public async Task<Order> GetOrderById(int orderId)
+        {
+            return await _context.Orders
+                .Include(o => o.OrderDetails)
+                .ThenInclude(od => od.IceCream)
+                .FirstOrDefaultAsync(o => o.OrderId == orderId);
+        }
 
-		
-	}
+    }
 }

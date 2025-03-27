@@ -29,11 +29,15 @@ namespace IcreamShopApi.Controllers
             return Ok(orders);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Order>> GetOrderById(int id)
+        [HttpGet("{orderId}")]
+        public async Task<ActionResult<OrderDTO>> GetOrderDetails(int orderId)
         {
-            var getOrderId = await _orderService.GetOrderById(id);
-            return Ok(getOrderId);
+            var order = await _orderService.GetOrderDetailsById(orderId);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return Ok(order);
         }
 
         [HttpPost]

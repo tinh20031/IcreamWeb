@@ -1,4 +1,5 @@
 ﻿using IcreamShopApi.Data;
+using IcreamShopApi.DTOs;
 using IcreamShopApi.Models;
 using IcreamShopApi.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -154,7 +155,32 @@ namespace IcreamShopApi.Services
 
             return order;
         }
+        public async Task<OrderDTO> GetOrderDetailsById(int orderId)
+        {
+            var order = await _orderRepository.GetOrderById(orderId);
+            if (order == null)
+            {
+                return null;
+            }
 
+            var orderDTO = new OrderDTO
+            {
+                OrderId = order.OrderId,
+                TotalPrice = order.TotalPrice,
+                Status = order.Status,
+                OrderDate = order.OrderDate,
+                ShippingAddress = order.ShippingAddress,
+                OrderDetails = order.OrderDetails.Select(od => new OrderDetailDTO
+                {
+                    IceCreamName = od.IceCream?.Name ?? "Unknown",
+                    ImageUrl = od.IceCream?.ImageUrl,
+                    Quantity = od.Quantity,
+                    Price = od.Price
+                }).ToList()
+            };
+
+            return orderDTO;
+        }
 
     }
 
