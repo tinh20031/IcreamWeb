@@ -20,22 +20,19 @@ namespace IcreamShopCilent.Pages.Auth
 
         public async Task<IActionResult> OnPostAsync()
         {
-            // Ki?m tra ModelState
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            Console.WriteLine($"RegisterDto: {JsonSerializer.Serialize(RegisterDto)}"); // Log dữ liệu
-            var response = await _httpClient.PostAsJsonAsync("api/auth/register", RegisterDto);
 
+            var response = await _httpClient.PostAsJsonAsync("api/auth/register", RegisterDto);
             if (response.IsSuccessStatusCode)
             {
-                // Handle success, có th? redirect ??n trang ??ng nh?p ho?c thông báo thành công
+                TempData["SuccessMessage"] = "Registration successful! Please check your email to verify your account.";
                 return RedirectToPage("/Auth/Login");
             }
             else
             {
-                // Handle failure, có th? l?y chi ti?t l?i t? API ?? thông báo
                 var errorMessage = await response.Content.ReadAsStringAsync();
                 ModelState.AddModelError(string.Empty, $"Registration failed: {errorMessage}");
                 return Page();

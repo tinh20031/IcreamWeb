@@ -66,11 +66,19 @@ namespace IcreamShopCilent.Pages.Auth
 
                     if (userInfo != null)
                     {
-                        //HttpContext.Session.SetString("UserId", userInfo.UserId.ToString());
+                        HttpContext.Session.SetInt32("UserId", userInfo.UserId);  // Lưu UserId dưới dạng số
                         HttpContext.Session.SetString("FullName", userInfo.FullName);
-                        Console.WriteLine($"After setting userInfo - UserId (string): {userInfo.UserId}, Retrieved UserId (int): {HttpContext.Session.GetInt32("UserId")}");
+                        Console.WriteLine($"After setting userInfo - UserId: {userInfo.UserId}");
+
+                        // Nếu user là admin, lưu AdminId vào session
+                        if (string.Equals(userInfo.Role, "admin", StringComparison.OrdinalIgnoreCase))
+                        {
+                            HttpContext.Session.SetInt32("AdminId", userInfo.UserId);
+                            Console.WriteLine($"AdminId saved in session: {userInfo.UserId}");
+                        }
                     }
                 }
+
 
                 if (string.Equals(role, "admin", StringComparison.OrdinalIgnoreCase))
                     return RedirectToPage("/Admins/DashboardModel");
@@ -89,3 +97,4 @@ namespace IcreamShopCilent.Pages.Auth
         }
     }
 }
+

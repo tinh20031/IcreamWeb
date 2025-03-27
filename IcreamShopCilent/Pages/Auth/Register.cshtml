@@ -112,7 +112,13 @@
                     <input type="password" id="password" asp-for="RegisterDto.Password" class="form-control" required placeholder="Your secret flavor" />
                 </div>
                 <button type="submit" class="btn btn-primary icecream">Register Now <span class="icecream-emoji">🍨</span></button>
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                }
             </form>
+           
         </div>
     </div>
+    
 </div>

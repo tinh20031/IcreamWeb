@@ -1,4 +1,5 @@
-﻿using IcreamShopApi;
+﻿using IcecreamShopApi.Services;
+using IcreamShopApi;
 using IcreamShopApi.Data;
 using IcreamShopApi.Models;
 using IcreamShopApi.Repository;
@@ -35,7 +36,7 @@ builder.Services.AddControllers().AddOData(opt => opt
     .SetMaxTop(100) 
 );
 
-
+builder.Services.AddSignalR();
 IEdmModel GetEdmModel()
 {
     var builder = new ODataConventionModelBuilder();
@@ -123,7 +124,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 });
-
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
 
@@ -138,6 +139,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapHub<ChatHub>("/chatHub");
 
 app.UseStaticFiles();
 
