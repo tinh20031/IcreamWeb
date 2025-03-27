@@ -94,75 +94,6 @@
             font-size: 1.5em;
             margin: 0 5px;
         }
-
-        .chat-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 300px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .chat-header {
-            background: linear-gradient(45deg, #ff6f91, #ffcc70);
-            color: white;
-            padding: 10px;
-            border-radius: 15px 15px 0 0;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-body {
-            display: none;
-            padding: 10px;
-        }
-
-        .chat-messages {
-            height: 200px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            padding: 5px;
-        }
-
-        .chat-message {
-            margin: 5px 0;
-            padding: 5px 10px;
-            border-radius: 10px;
-            max-width: 80%;
-        }
-
-        .user-message {
-            background: #ff6f91;
-            color: white;
-            margin-left: auto;
-        }
-
-        .ai-message {
-            background: #f0f0f0;
-            color: #333;
-        }
-
-        .chat-input {
-            display: flex;
-            gap: 5px;
-        }
-
-        #chatInput {
-            flex: 1;
-            border-radius: 10px;
-            border: 2px solid #ffd6e8;
-            padding: 5px;
-        }
-
-            #chatInput:focus {
-                border-color: #ff6f91;
-                outline: none;
-            }
     </style>
 }
 <!-- Hộp Trò Chuyện AI -->
@@ -189,54 +120,91 @@
     </div>
 
     <div id="iceCreamList" class="row row-cols-1 row-cols-md-3 g-4"></div>
+
+    <!-- Phần phân trang -->
+    <div class="pagination" id="pagination">
+        <button id="prevPage" onclick="changePage(currentPage - 1)">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextPage" onclick="changePage(currentPage + 1)">Next</button>
+    </div>
 </div>
 
 @section Scripts {
     <script>
         // Giả sử UserId được truyền từ server (thay thế bằng logic xác thực thực tế)
         const userId = @Model.CurrentUserId; // Cần triển khai trong IndexModel để lấy UserId
+        const pageSize = 6; // Số lượng kem trên mỗi trang
+        let currentPage = 1; // Trang hiện tại
+        let totalPages = 1; // Tổng số trang
+        let allIceCreams = []; // Lưu toàn bộ dữ liệu từ API
 
         async function fetchIceCreams(query = "") {
-            let baseUrl = "https://localhost:7283";  
+            let baseUrl = "https://localhost:7283";
             let url = query ? `${baseUrl}/api/IceCreamApi/search?name=${query}` : `${baseUrl}/api/IceCreamApi`;
 
             try {
                 let response = await fetch(url);
                 if (!response.ok) {
-                    throw new Error("Không thể lấy danh sách kem.");
+                    const errorText = await response.text();
+                    throw new Error(`Không thể lấy danh sách kem. Mã trạng thái: ${response.status}. Phản hồi: ${errorText}`);
                 }
-                let data = await response.json();
-                renderIceCreams(data);
+                allIceCreams = await response.json(); // Lưu toàn bộ dữ liệu vào biến toàn cục
+
+                // Tính toán phân trang
+                totalPages = Math.ceil(allIceCreams.length / pageSize);
+                currentPage = 1; // Reset về trang 1 khi lấy dữ liệu mới
+
+                // Hiển thị dữ liệu cho trang hiện tại
+                renderIceCreamsForPage(currentPage);
+
+                // Cập nhật giao diện phân trang
+                updatePagination();
             } catch (error) {
                 console.error("Lỗi khi lấy danh sách kem:", error);
-                alert("Đã xảy ra lỗi khi tải danh sách kem.");
+                alert("Đã xảy ra lỗi khi tải danh sách kem: " + error.message);
             }
         }
 
-        function renderIceCreams(data) {
+        function renderIceCreamsForPage(page) {
+            let startIndex = (page - 1) * pageSize;
+            let endIndex = startIndex + pageSize;
+            let pageData = allIceCreams.slice(startIndex, endIndex); // Lấy dữ liệu cho trang hiện tại
+
             let container = document.getElementById("iceCreamList");
             container.innerHTML = "";
-            data.forEach(item => {
+            pageData.forEach(item => {
                 container.innerHTML += `
                     <div class="col">
-                        <div class="card icecream-card">
+                        <div class="card icecream-card" onclick="window.location.href='/User/IceCreamDetail/${item.iceCreamId}'">
                             <img src="${item.imageUrl}" class="card-img-top" alt="${item.name}">
                             <div class="card-body">
                                 <h5 class="card-title">${item.name}</h5>
                                 <p class="card-text">$${item.price.toFixed(2)}</p>
-                                                <button class="btn btn-add-cart" onclick="addToCart(${item.iceCreamId})">Thêm vào giỏ hàng <span class="icecream-emoji">🛒</span></button>
+                                <button class="btn btn-add-cart" onclick="event.stopPropagation(); addToCart(${item.iceCreamId})">Thêm vào giỏ hàng <span class="icecream-emoji">🛒</span></button>
                             </div>
                         </div>
                     </div>`;
             });
         }
 
+        function updatePagination() {
+            document.getElementById("pageInfo").textContent = `Page ${currentPage} of ${totalPages}`;
+            document.getElementById("prevPage").disabled = currentPage === 1;
+            document.getElementById("nextPage").disabled = currentPage === totalPages;
+        }
+
+        function changePage(page) {
+            if (page < 1 || page > totalPages) return;
+            currentPage = page;
+            renderIceCreamsForPage(currentPage);
+            updatePagination();
+        }
+
         function searchIceCream() {
+            currentPage = 1; // Reset về trang 1 khi tìm kiếm
             let query = document.getElementById("searchInput").value;
             fetchIceCreams(query);
         }
-
-     
 
         const token = '@HttpContext.Session.GetString("JWToken")'; // Lấy token từ session
 

@@ -1,0 +1,175 @@
+﻿@page "{iceCreamId:int}"
+@model IcreamShopCilent.Pages.User.IceCreamDetailModel
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <style>
+        .detail-container {
+            padding: 40px;
+            background: linear-gradient(135deg, #fff3e0, #ffe6f2, #e6f7ff);
+            min-height: 100vh;
+        }
+
+        .icecream-detail {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .icecream-image {
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .icecream-title {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff6f91;
+            font-size: 2rem;
+        }
+
+        .icecream-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6f91;
+        }
+
+        .icecream-description {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .btn-checkout, .btn-add-cart {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.2s;
+            margin-right: 10px;
+        }
+
+            .btn-checkout:hover, .btn-add-cart:hover {
+                transform: scale(1.05);
+            }
+
+        .icecream-emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+    </style>
+}
+
+<div class="detail-container">
+    @if (Model.IceCream != null)
+    {
+        <div class="icecream-detail">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="@Model.IceCream.ImageUrl" class="icecream-image" alt="@Model.IceCream.Name">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="icecream-title">@Model.IceCream.Name</h2>
+                    <p class="icecream-price">$@Model.IceCream.Price.ToString("F2")</p>
+                    <p class="icecream-description">@(Model.IceCream.Description ?? "Không có mô tả.")</p>
+                    <div class="mt-4">
+                        <button class="btn btn-add-cart" onclick="addToCart(@Model.IceCream.IceCreamId)">Thêm vào giỏ hàng <span class="icecream-emoji">🛒</span></button>
+                        <button class="btn btn-checkout" onclick="checkoutIceCream(@Model.IceCream.IceCreamId)">Thanh toán ngay <span class="icecream-emoji">💳</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            Không tìm thấy sản phẩm.
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        const userId = @Model.CurrentUserId; // Lấy UserId từ model
+        const token = '@HttpContext.Session.GetString("JWToken")'; // Lấy token từ session
+
+        async function addToCart(iceCreamId) {
+            if (!userId) {
+                alert("Vui lòng đăng nhập để thêm vào giỏ hàng!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            const cartItem = {
+                UserId: userId,
+                IceCreamId: iceCreamId,
+                Quantity: 1
+            };
+
+            try {
+                const response = await fetch("https://localhost:7283/api/CartApi", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(cartItem)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(`Đã thêm ${result.iceCream?.name || 'kem'} vào giỏ hàng!`);
+                } else {
+                    const error = await response.json();
+                    alert(`Không thể thêm vào giỏ hàng: ${error.message || 'Lỗi không xác định'} (Status: ${response.status})`);
+                }
+            } catch (error) {
+                console.error("Lỗi khi thêm vào giỏ hàng:", error);
+                alert("Đã xảy ra lỗi khi thêm vào giỏ hàng: " + error.message);
+            }
+        }
+
+        async function checkoutIceCream(iceCreamId) {
+            if (!userId) {
+                alert("Vui lòng đăng nhập để thanh toán!");
+                window.location.href = "/Auth/Login";
+                return;
+            }
+
+            // Thêm sản phẩm vào giỏ hàng trước khi chuyển hướng
+            const cartItem = {
+                UserId: userId,
+                IceCreamId: iceCreamId,
+                Quantity: 1
+            };
+
+            try {
+                const addToCartResponse = await fetch("https://localhost:7283/api/CartApi", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify(cartItem)
+                });
+
+                if (!addToCartResponse.ok) {
+                    const errorText = await addToCartResponse.text();
+                    throw new Error(`Không thể thêm vào giỏ hàng: ${errorText}`);
+                }
+
+                // Chuyển hướng đến trang checkout
+                window.location.href = "/User/Checkout";
+            } catch (error) {
+                console.error("Lỗi khi thêm vào giỏ hàng trước khi thanh toán:", error);
+                alert("Đã xảy ra lỗi: " + error.message);
+            }
+        }
+    </script>
+}
+}
