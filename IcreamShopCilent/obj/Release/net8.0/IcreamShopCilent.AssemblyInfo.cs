@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IcreamShopCilent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce3ff6dac14e538c6f241ce8f188d0b2d7c575a8")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a46caea1a9cbdf66ce69629bc31cb938c3f6ab0b")]
+>>>>>>> 2ea982d (detailice)
 [assembly: System.Reflection.AssemblyProductAttribute("IcreamShopCilent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IcreamShopCilent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

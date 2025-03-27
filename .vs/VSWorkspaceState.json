@@ -10,6 +10,10 @@
     "\\IcreamShopCilent\\Pages",
     "\\IcreamShopCilent\\Pages\\User"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\IcreamShopCilent\\Pages\\User\\Index.cshtml",
+=======
+  "SelectedNode": "\\IcreamShopApi\\appsettings.json",
+>>>>>>> 2ea982d (detailice)
   "PreviewInSolutionExplorer": false
 }
