@@ -18,6 +18,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\source_code\SC_PRN231\IcreamWeb\IcreamShopCilent
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Admins/Categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXENhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Admins/DashboardModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXERhc2hib2FyZE1vZGVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Admins/IceCreamAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXEljZUNyZWFtQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Admins/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXFVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,6 +56,42 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/IceCreamDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxJY2VDcmVhbURldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxPcmRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/PaymentResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxQYXltZW50UmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/User/VnpayReturn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxWbnBheVJldHVybi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/source_code/SC_PRN231/IcreamWeb/IcreamShopCilent/Pages/_ViewImports.cshtml]

@@ -3,10 +3,13 @@
     "",
     "\\IcreamShopApi",
     "\\IcreamShopApi\\Controllers",
+    "\\IcreamShopApi\\Controllers\\ODATA",
     "\\IcreamShopApi\\Models",
     "\\IcreamShopApi\\Repository",
-    "\\IcreamShopCilent"
+    "\\IcreamShopCilent",
+    "\\IcreamShopCilent\\Pages",
+    "\\IcreamShopCilent\\Pages\\User"
   ],
-  "SelectedNode": "\\IcreamShopApi\\Program.cs",
+  "SelectedNode": "\\IcreamShopCilent\\Pages\\User\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

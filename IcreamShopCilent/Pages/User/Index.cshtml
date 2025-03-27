@@ -94,6 +94,105 @@
             font-size: 1.5em;
             margin: 0 5px;
         }
+
+
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background: linear-gradient(45deg, #ff6f91, #ffcc70);
+            color: white;
+            padding: 10px;
+            border-radius: 15px 15px 0 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-body {
+            display: none;
+            padding: 10px;
+        }
+
+        .chat-messages {
+            height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .chat-message {
+            margin: 5px 0;
+            padding: 5px 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background: #ff6f91;
+            color: white;
+            margin-left: auto;
+        }
+
+        .ai-message {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 5px;
+        }
+
+        #chatInput {
+            flex: 1;
+            border-radius: 10px;
+            border: 2px solid #ffd6e8;
+            padding: 5px;
+        }
+
+            #chatInput:focus {
+                border-color: #ff6f91;
+                outline: none;
+            }
+
+        /* Style cho phân trang */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+            .pagination button {
+                background: linear-gradient(45deg, #ff6f91, #ffcc70);
+                border: none;
+                border-radius: 5px;
+                padding: 8px 15px;
+                margin: 0 5px;
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: transform 0.2s;
+            }
+
+                .pagination button:disabled {
+                    background: #ccc;
+                    cursor: not-allowed;
+                }
+
+                .pagination button:hover:not(:disabled) {
+                    transform: scale(1.05);
+                }
+
     </style>
 }
 <!-- Hộp Trò Chuyện AI -->

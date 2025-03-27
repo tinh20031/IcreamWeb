@@ -631,71 +631,28 @@ namespace IcreamShopApi.Controllers
         }
 
 
-                    if (vnp_ResponseCode == "00" && vnp_TransactionStatus == "00")
-                    {
-                        order.Status = "Paid";
-                        _logger.LogInformation("Cập nhật trạng thái đơn hàng {OrderId}: Đã thanh toán", orderId);
-                        await _context.SaveChangesAsync();
-                        return Ok(new
-                        {
-                            status = "success",
-                            orderId = orderId,
-                            message = "Thanh toán thành công"
-                        });
-                    }
-                    else
-                    {
-                        order.Status = "Failed";
-                        _logger.LogInformation("Cập nhật trạng thái đơn hàng {OrderId}: Thanh toán thất bại", orderId);
-                        await _context.SaveChangesAsync();
-                        return Ok(new
-                        {
-                            status = "failure",
-                            orderId = orderId,
-                            message = "Thanh toán thất bại",
-                            responseCode = vnp_ResponseCode
-                        });
-                    }
-                }
-                else
-                {
-                    _logger.LogWarning("Mã giao dịch VNPAY không hợp lệ: {VnpTxnRef}", vnp_TxnRef);
-                    return BadRequest(new { status = "error", message = "Invalid order ID" });
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Lỗi khi xử lý VnpayReturn.");
-                return StatusCode(500, new { status = "error", message = "Đã xảy ra lỗi khi xử lý kết quả thanh toán." });
-            }
+
+
+        public class CreateOrderRequest
+        {
+            public string ShippingAddress { get; set; }
         }
 
+        public class CreatePaymentRequest
+        {
+            public string ShippingAddress { get; set; }
+        }
+
+        public class UpdateOrderStatusRequest
+        {
+            public string OrderId { get; set; }
+            public string Status { get; set; }
+        }
+
+        public class ZaloPayCallbackRequest
+        {
+            public string Data { get; set; }
+            public string Mac { get; set; }
+        }
     }
-
-    public class CreateOrderRequest
-    {
-        public string ShippingAddress { get; set; }
-    }
-
-    public class CreatePaymentRequest
-    {
-        public string ShippingAddress { get; set; }
-    }
-
-    public class UpdateOrderStatusRequest
-    {
-        public string OrderId { get; set; }
-        public string Status { get; set; }
-    }
-
-    public class ZaloPayCallbackRequest
-    {
-        public string Data { get; set; }
-        public string Mac { get; set; }
-    }
-
-
-
-
-
 }
