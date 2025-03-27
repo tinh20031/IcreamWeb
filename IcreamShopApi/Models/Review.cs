@@ -16,9 +16,9 @@ namespace IcreamShopApi.Models
 
 		// Khóa ngoại
 		[JsonIgnore]
-		public User User { get; set; }
+		public User? User { get; set; }
 		[JsonIgnore]
-		public IceCream IceCream { get; set; }
+		public IceCream? IceCream { get; set; }
 	}
 
 }

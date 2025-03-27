@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using Microsoft.IdentityModel.Tokens;
 
 namespace IcreamShopCilent.Pages.User
 {
@@ -29,8 +30,9 @@ namespace IcreamShopCilent.Pages.User
             if (!ModelState.IsValid)
                 return Page();
 
-            var userId = HttpContext.Session.GetString("UserId");
-            if (string.IsNullOrEmpty(userId))
+            var userId = HttpContext.Session.GetInt32("UserId");
+            var token = HttpContext.Session.GetString("JWToken");
+            if (string.IsNullOrEmpty(token))
             {
                 TempData["ErrorMessage"] = "Chưa đăng nhập.";
                 return RedirectToPage("/Auth/Login");
