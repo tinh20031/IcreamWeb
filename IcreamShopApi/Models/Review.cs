@@ -9,6 +9,7 @@ namespace IcreamShopApi.Models
 		[Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int ReviewId { get; set; }
 		public int UserId { get; set; }
+		
 		public int IceCreamId { get; set; }
 		public int Rating { get; set; }
 		public string Comment { get; set; }
