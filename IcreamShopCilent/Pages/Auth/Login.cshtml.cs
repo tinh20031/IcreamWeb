@@ -73,7 +73,7 @@ namespace IcreamShopCilent.Pages.Auth
                 }
 
                 if (string.Equals(role, "admin", StringComparison.OrdinalIgnoreCase))
-                    return RedirectToPage("/Admins/DashboardModel");
+                    return RedirectToPage("/Admins/Dashboard");
 
                 return RedirectToPage("/User/Index");
             }

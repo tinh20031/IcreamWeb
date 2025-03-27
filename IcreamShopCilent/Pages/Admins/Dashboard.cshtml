@@ -1,9 +1,9 @@
-﻿@* @page
-@model IcreamShopCilent.Pages.Admin.DashboardModel
+﻿@page
+@model IcreamShopCilent.Pages.Admins.DashboardModel
 @{
     Layout = "_AdminLayout"; // Sử dụng layout mới
 }
 <h2>Admin Dashboard</h2>
 <p>Welcome, @HttpContext.Session.GetString("FullName")! You are an Admin.</p>
 
-<a class="btn btn icecream" asp-page="/Admins/Users">User Management</a> *@
+<a class="btn btn icecream" asp-page="/Admins/Users">User Management</a>

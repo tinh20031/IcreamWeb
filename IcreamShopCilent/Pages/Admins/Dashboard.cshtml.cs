@@ -1,13 +1,10 @@
-﻿using IcreamShopApi.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Net.Http.Headers;
-using System.Text.Json;
 
-namespace IcreamShopCilent.Pages.Admin
+namespace IcreamShopCilent.Pages.Admins
 {
-    [Authorize(Roles = "admin")]
+  
     public class DashboardModel : PageModel
     {
         private readonly HttpClient _httpClient;

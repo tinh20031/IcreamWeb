@@ -24,7 +24,7 @@ namespace IcreamShopApi.Models
         public string District { get; set; } // Quận/Huyện
         public string Province { get; set; } // Tỉnh/Thành phố
 
-        public bool IsDefault { get; set; } // Địa chỉ mặc định
+        public bool IsDefault { get; set; } // ịa chỉ mặc định
 
         // Khóa ngoại
         [JsonIgnore]

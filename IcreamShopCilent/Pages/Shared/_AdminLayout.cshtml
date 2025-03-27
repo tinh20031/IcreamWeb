@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IcreamShop Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #343a40;
+            color: white;
+            padding-top: 20px;
+            position: fixed;
+            height: 100%;
+        }
+
+            .sidebar a {
+                color: white;
+                padding: 15px;
+                display: block;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    background-color: #495057;
+                }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            padding: 15px;
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a class="navbar-brand" href="#">IcreamShop Admin</a>
+        <a asp-page="/Admins/Dashboard">Dashboard</a>
+        <a asp-page="/Admins/Users">Quản Lý Người Dùng</a>
+        <a asp-page="/Admins/Categories">Quản Lý Danh Mục</a>
+        <a asp-page="/Admins/IceCreamAdmin">Quản Lý IceCream</a>
+        <a asp-page="/Index">Quay Lại Trang Chủ</a>
+        <a asp-page="/Logout">Đăng Xuất</a>
+    </div>
+
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
